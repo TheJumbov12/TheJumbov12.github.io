@@ -41,6 +41,8 @@
     <p>Rebirth</p>
     <p><button onclick="Rebirth()">Cost: 2000000</button></p>
     <h3>Version v0.01</h3>
+    <h3>Known bugs:</h3>
+    <h3>Upgrades don't work</h3>
 	<script>
         alert("Hello! Welcome to VAISD Teacher Spinner! This is a alpha version of it, so do expect some bugs. ")
 		var count = 0;
@@ -93,7 +95,8 @@
                 alert("You can't rebirth yet!")
             }
             if (FinalCount >= 2000000) {
-                if (Rebirthed == false) {
+                Rebirthed = 0
+                if (Rebirthed == 0) {
                     count = 0;
                     document.getElementById("Spinimg").src  = "https://3.files.edl.io/7b7e/22/06/01/175650-1d574548-c65c-4b96-95cb-99108866bda3.jpg";
                     alert("Corgrats! You have rebirted to the Beal Level!")
@@ -114,10 +117,70 @@
                     Rebirthed = 3
                     document.getElementById("p3") = "The Hips has spun:"
                 }
+                if (Rebirthed == 3) {
+                    count = 0;
+                    document.getElementById("Spinimg").src  = "https://3.files.edl.io/7cb0/23/02/28/193139-b6c471af-21c9-42b2-94d2-52a3225c3a64.jpg";
+                    alert("Corgrats! You have rebirted to the Brogden Level!")
+                    Rebirthed = 4
+                    document.getElementById("p3") = "The Hips has spun:"
+                }
+                if (Rebirthed == 4) {
+                    count = 0;
+                    document.getElementById("Spinimg").src  = "https://3.files.edl.io/9da3/22/06/02/132319-2322c0ff-fa3f-4300-9dbc-d98382f6e429.jpg";
+                    alert("Corgrats! You have rebirted to the Essary Level!")
+                    Rebirthed = 5
+                    document.getElementById("p3") = "The Hips has spun:"
+                }
+                if (Rebirthed == 5) {
+                    count = 0;
+                    document.getElementById("Spinimg").src  = "https://1.cdn.edl.io/DpBhkLvjWKLufhyDJtysBk092bW53lkH9fnEOLGX43ycRVHQ.jpg";
+                    alert("Corgrats! You have rebirted to the Hardcastle Level!")
+                    Rebirthed = 6
+                    document.getElementById("p3") = "The Hips has spun:"
+                }
+                if (Rebirthed == 6) {
+                    count = 0;
+                    document.getElementById("Spinimg").src  = "https://3.files.edl.io/3c40/23/05/30/173018-63531371-0896-4f97-8794-688b25526894.jpg";
+                    alert("Corgrats! You have rebirted to the Blanton Level!")
+                    Rebirthed = 7
+                    document.getElementById("p3") = "The Hips has spun:"
+                }
+                if (Rebirthed == 7) {
+                    count = 0;
+                    document.getElementById("Spinimg").src  = "https://3.files.edl.io/f1a2/21/06/03/161354-f43e1f9e-278c-466a-82a4-a9a970c6e2aa.jpg";
+                    alert("Corgrats! You have rebirted to the Elliott Level!")
+                    Rebirthed = 8
+                    document.getElementById("p3") = "The Hips has spun:"
+                }
+                if (Rebirthed == 8) {
+                    count = 0;
+                    document.getElementById("Spinimg").src  = "https://1.cdn.edl.io/stuJrdfWiZdsn1G4jOSFdYRChXLvOsVJaPampYUxAzfogLK5.jpg";
+                    alert("Corgrats! You have rebirted to the Stein Level!")
+                    Rebirthed = 9
+                    document.getElementById("p3") = "The Hips has spun:"
+                }
+                if (Rebirthed == 9) {
+                    count = 0;
+                    document.getElementById("Spinimg").src  = "https://3.files.edl.io/da03/22/11/29/163632-75952f63-5a90-4599-bba0-d6977853fc89.png";
+                    alert("Corgrats! You have rebirted to the Nabors Level!")
+                    Rebirthed = 10
+                    document.getElementById("p3") = "The Hips has spun:"
+                }
+                if (Rebirthed == 10) {
+                    count = 0;
+                    document.getElementById("Spinimg").src  = "https://github.com/TheJumbov12/TheJumbov12.github.io/blob/main/Screenshot_20231021_233711_Snapchat.png?raw=true";
+                    alert("Corgrats! You have rebirted to the Landen Level!")
+                    Rebirthed = 11
+                    document.getElementById("p3") = "The Hips has spun:"
+                }
             }
         }
 
-
+        function ISS() {
+            alert("This does nothing!")
+        }
 	</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2617588767569037"
+    crossorigin="anonymous"></script>
 </body>
 </html>
