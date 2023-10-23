@@ -41,7 +41,7 @@
     <p6></p6>
 	<p><strong id = "p3"></strong> <span id="count">0</span> <strong>spins</strong></p>
     <p>More Per Spin</p>
-    <p><button onclick="MorePerSpin()">Cost: 20</button></p>
+    <p><button onclick="MorePerSpin()">Cost: 200</button></p>
     <p>History Homework</p>
     <p><button onclick="HistoryHomework()">Cost: 2500</button></p>
     <p>Rebirth</p>
@@ -78,10 +78,10 @@
 		});
 
         function MorePerSpin() {
-            if (FinalCount <= 20) {
+            if (FinalCount <= 200) {
                 alert("Can't Buy this!")
             }
-            if (FinalCount >= 20) {
+            if (FinalCount >= 200) {
                 FinalCount = FinalCount - 20
                 MorePerSpinVar = MorePerSpinVar + 2
                 countSpan.textContent = FinalCount;
