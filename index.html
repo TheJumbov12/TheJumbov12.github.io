@@ -39,7 +39,7 @@
     <p4></p4>
     <p5></p5>
     <p6></p6>
-    <p7></p7>
+    <p7> </p7>
 	<p><strong id = "p3"></strong> <span id="count">0</span> <strong>spins</strong></p>
     <p>More Per Spin</p>
     <p><button onclick="MorePerSpin()">Cost: 200</button></p>
@@ -58,7 +58,6 @@
             document.querySelector('p4').innerHTML = `<button onclick="Add100000()">DEV: Add 100000</button>`;
             document.querySelector('p5').innerHTML = `<button onclick="AutoRebirth()">DEV: Auto Rebirth</button>`;
             document.querySelector('p6').innerHTML = `<button onclick="MaxRebirth()">DEV: Max Rebirth</button>`;
-            document.querySelector('p7').innerHTML = `<button onclick="NONSTOPPOP()">DEV: NON STOP POP</button>`;
         } 
         if (person != null) {
             console.log("Password Entered! ")
@@ -74,11 +73,6 @@
         var HistoryHomeworkVar = 0;
         var Rebirthed = 1;
         var FinalCount = document.cookie.replace(/(?:(?:^|.*;\s*)FinalCount\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-
-        function NONSTOPPOP() {
-            document.querySelector('p7').innerHTML = `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/yvw9-Lv__Cw?si=0jXFlQCv9M6K5PHn&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-        }
-
 		img.addEventListener('animationiteration', function() {
 			count++;
             count = count + (Rebirthed * Rebirthed) - 1;
