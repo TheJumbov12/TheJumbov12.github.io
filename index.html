@@ -39,6 +39,7 @@
     <p4></p4>
     <p5></p5>
     <p6></p6>
+    <p7></p7>
 	<p><strong id = "p3"></strong> <span id="count">0</span> <strong>spins</strong></p>
     <p>More Per Spin</p>
     <p><button onclick="MorePerSpin()">Cost: 200</button></p>
@@ -58,6 +59,9 @@
             document.querySelector('p5').innerHTML = `<button onclick="AutoRebirth()">DEV: Auto Rebirth</button>`;
             document.querySelector('p6').innerHTML = `<button onclick="MaxRebirth()">DEV: Max Rebirth</button>`;
         } 
+        if (person != null) {
+            console.log("Password Entered! ")
+        }
 		var count = 1;
 		var img = document.querySelector('img');
 		var countSpan = document.querySelector('#count');
