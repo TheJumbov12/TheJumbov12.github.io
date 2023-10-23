@@ -76,8 +76,8 @@
 		img.addEventListener('animationiteration', function() {
 			count++;
             count = count + (Rebirthed * Rebirthed) - 1;
-            count = count + (MorePerSpinVar);
-            count = count + (HistoryHomeworkVar);
+            count = count + MorePerSpinVar;
+            count = count + HistoryHomeworkVar;
             FinalCount = count
             FinalCount = Math.round(FinalCount)
 			countSpan.textContent = FinalCount;
