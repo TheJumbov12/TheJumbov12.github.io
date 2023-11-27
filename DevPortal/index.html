@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Devloper Portal</title>
+    <title>Hacker Page</title>
     <style>
         body {
             background-color: #000;
@@ -45,36 +45,52 @@
             color: #000;
             transition: 0.3s;
         }
+        /* DEMO-SPECIFIC STYLES */
+        .typewriter h1 {
+        color: #fff;
+        font-family: monospace;
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        border-right: .15em solid rgb(32, 32, 32); /* The typwriter cursor */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+        letter-spacing: .15em; /* Adjust as needed */
+        animation: 
+            typing 3.5s steps(30, end),
+            blink-caret .5s step-end infinite;
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: orange }
+        }
     </style>
 </head>
 <script>
-    let person = prompt("Enter Username", "Username");
-    if (person == "Jumbo") {
-        let personpassword = prompt("Password:", "Password")
-        if (personpassword == "Carter0125!") {
-            console.log("Good Password")
-        }
-        if (personpassword != "Carter0125!") {
-            history.back()
-    }
-    if (person != "Jumbo") {
-        history.back()
-    }
-    } 
+    alert("Welcome to the Jumbo Development Development Portal, please remember that all items here are a work in progress, and that all bugs should be reported on the google forum.")
 </script>
 <body>
     <div class="container">
         <div class="image">
             <img src="developmentlogowhite.png" alt="Hacker">
         </div>
-        <h1>Development Portal</h1>
+        <div class="typewriter">
+            <h1>Development Portal</h1>
+        </div>
+        <h3>WARNING: THIS IS ALL A WORK IN PROGRESS</h3>
         <div class="buttons">
-            <button class="button" id="1" onclick="document.location='teacherspin'">Teacher Spinner</button>
+            <button class="button" id="1" onclick="">Coming Soon</button>
             <button class="button" id="2" onclick="">Coming Soon</button>
             <button class="button" id="3" onclick="">Coming Soon</button>
             <button class="button" id="4" onclick="">Coming Soon</button>
             <button class="button" id="5" onclick="">Coming Soon</button>
-            <button class="button" id="6" onclick="document.location='DevPortal'">Development Portal</button>
+            <button class="button" id="6" onclick="">Coming Soon</button>
         </div>
     </div>
 </body>
