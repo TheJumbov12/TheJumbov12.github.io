@@ -21,6 +21,12 @@ document.addEventListener('DOMContentLoaded' , () => {
         if (e.keyCode === 32) {
             jump()
         }
+        if (e.keyCode === 38) {
+            jump()
+        }
+        if (e.keyCode === 87) {
+            jump()
+        }
     }
 
     function jump() {
