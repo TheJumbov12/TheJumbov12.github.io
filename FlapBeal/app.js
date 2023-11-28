@@ -89,5 +89,7 @@ document.addEventListener('DOMContentLoaded' , () => {
         ground.classList.remove('ground-moving')
     }
 
-
+    function GoBack() {
+            history.back()
+    }
 })
