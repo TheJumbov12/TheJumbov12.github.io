@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded' , () => {
 
     let birdLeft = 220
     let birdBottom = 100
-    let gravity = 2
+    let gravity = 1
     let isGameOver = false
     let gap = 430
 
@@ -29,7 +29,12 @@ document.addEventListener('DOMContentLoaded' , () => {
         if (e.keyCode === 87) {
             jump()
         }
+        if(e.keyCode === 82) {
+            startGame()
+        }
     }
+
+    
 
     function jump() {
         if (birdBottom < 500) birdBottom += 20
