@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded' , () => {
                 gameDisplay.removeChild(topObstacle)
                 Score = Score + 2
                 Score = Score - 1
+                alert(Score)
             }
             if (
                 obstacleLeft > 200 && obstacleLeft < 280 && birdLeft === 220 &&
