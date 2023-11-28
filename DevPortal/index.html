@@ -70,12 +70,52 @@
         from, to { border-color: transparent }
         50% { border-color: orange }
         }
+
+        @keyframes blink {
+          50% { border-color: transparent; }
+        }
+
+        #bottom-text {
+          position: fixed;
+          bottom: 200;
+          width: 100%;
+          text-align: center;
+          font-size: 20px;
+          color: rgb(0, 255, 0);
+          background-color: black;
+          overflow: hidden;
+          border-right: 0.15em solid rgb(0, 0, 0);
+          white-space: nowrap;
+          animation: typing 10s steps(40, end), blink 0.75s step-end infinite;
+        }
     </style>
 </head>
-<script>
-    alert("Welcome to the Jumbo Development Development Portal, please remember that all items here are a work in progress, and that all bugs should be reported on the google forum.")
-</script>
 <body>
+    <script>
+        alert("Welcome to the Jumbo Development Development Portal, please remember that all items here are a work in progress, and that all bugs should be reported on the google forum.")
+        
+        // A table of strings to display
+        var table = ["Hello, world!", "I make funny game", "Splatoon 3 kinda a good game ngl", "Snakes can predict earthquakes", "We spend a year on the toilet in our lifetime."];
+        
+        // A function to get a random string from the table
+        function getRandomString() {
+          var index = Math.floor(Math.random() * table.length);
+          return table[index];
+        }
+        
+        // A function to update the bottom text element with a random string
+        function updateBottomText() {
+          var element = document.getElementById("bottom-text");
+          element.innerHTML = getRandomString();
+        }
+        
+        // A function to set up a timer to update the bottom text every 30 seconds
+        function startTimer() {
+          updateBottomText(); // Update the bottom text once at the start
+          setInterval(updateBottomText, 5000); // Update the bottom text every 30 seconds
+        }
+        
+    </script>
     <div class="container">
         <div class="image">
             <img src="developmentlogowhite.png" alt="Hacker">
@@ -84,7 +124,7 @@
         <h3><a href="mailto:dantdm1004@gmail.com" target="_blank">Suggestion? Click here!</a></h3>
     </div>
     <div style="position: fixed; top: 0; left: 0;">
-        <h3><a href="thejumbov12.github.io" target="_blank">Go back</a></h3>
+        <h3><a href="thejumbov12.github.io">Go back</a></h3>
     </div>
         <div class="typewriter">
             <h1>Development Portal</h1>
@@ -98,6 +138,7 @@
             <button class="button" id="5" onclick="">Coming Soon</button>
             <button class="button" id="6" onclick="">Coming Soon</button>
         </div>
+        <div id="bottom-text"></div>
     </div>
 </body>
 </html>
