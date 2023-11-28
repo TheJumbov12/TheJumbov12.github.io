@@ -56,6 +56,7 @@
     <h3>Known bugs:</h3>
     <h3>None Right Now! :D</h3>
 	<script>
+	var FirstLoad = false
         alert("Hello! Welcome to VAISD Teacher Spinner! This is a alpha version of it, so do expect some bugs. ")
         let person = prompt("Please enter the dev key if you have one, or click ok", "Insert Dev key here");
 
@@ -73,10 +74,13 @@
 		var count = 1;
 		var img = document.querySelector('img');
 		var countSpan = document.querySelector('#count');
-        var MorePerSpinVar = 0;
-        var FinalCount = 0;
-        var HistoryHomeworkVar = 0;
-        var Rebirthed = 1;
+        if FirstLoad == false {
+		var MorePerSpinVar = 0;
+        	var FinalCount = 0;
+        	var HistoryHomeworkVar = 0;
+        	var Rebirthed = 1;
+		FirstLoad = true
+	}
         var FinalCount = document.cookie.replace(/(?:(?:^|.*;\s*)FinalCount\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 		img.addEventListener('animationiteration', function() {
 			count++;
@@ -93,7 +97,7 @@
                 alert("Can't Buy this!")
             }
             if (FinalCount >= 200) {
-                FinalCount = FinalCount - 20
+                FinalCount = FinalCount - 200
                 MorePerSpinVar = MorePerSpinVar + 2
                 countSpan.textContent = FinalCount;
             }
