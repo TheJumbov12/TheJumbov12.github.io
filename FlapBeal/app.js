@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded' , () => {
+    alert("This is broken on Chromebooks, please do not report that")
     let Score = 0
     const bird = document.querySelector('.bird')
     const gameDisplay = document.querySelector('.game-container')
