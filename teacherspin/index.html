@@ -74,13 +74,11 @@
 		var count = 1;
 		var img = document.querySelector('img');
 		var countSpan = document.querySelector('#count');
-        if FirstLoad == false {
 		var MorePerSpinVar = 0;
         	var FinalCount = 0;
         	var HistoryHomeworkVar = 0;
         	var Rebirthed = 1;
 		FirstLoad = true
-	}
         var FinalCount = document.cookie.replace(/(?:(?:^|.*;\s*)FinalCount\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 		img.addEventListener('animationiteration', function() {
 			count++;
