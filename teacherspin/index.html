@@ -35,6 +35,9 @@
 	<div class="container">
 		<img id = "Spinimg"src="https://3.files.edl.io/7cc1/23/06/05/140734-b326cf25-d3b8-4aa0-992c-647fd32c32f8.jpg" alt="spinning image" />
 	</div>
+     <div style="position: fixed; top: 0; right: 0;">
+        	<h3><a onclick="GoBack()">Go back</a></h3>
+    </div>
     <div style="position: fixed; bottom: 0; right: 0;">
         <h3><a href="mailto:dantdm1004@gmail.com" target="_blank">Suggestion? Click here!</a></h3>
     </div>
@@ -106,6 +109,10 @@
                 countSpan.textContent = FinalCount;
             }
         }
+
+	function GoBack() {
+            history.back()
+    	}
 
         function Add100000() {
            count += 100000
