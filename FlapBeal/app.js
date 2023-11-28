@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded' , () => {
+    let Score = 0
     const bird = document.querySelector('.bird')
     const gameDisplay = document.querySelector('.game-container')
     const ground = document.querySelector('.ground-moving')
 
     let birdLeft = 220
     let birdBottom = 100
-    let gravity = 5
+    let gravity = 2
     let isGameOver = false
     let gap = 430
 
@@ -63,6 +64,8 @@ document.addEventListener('DOMContentLoaded' , () => {
                 clearInterval(timerId)
                 gameDisplay.removeChild(obstacle)
                 gameDisplay.removeChild(topObstacle)
+                Score = Score + 2
+                Score = Score - 1
             }
             if (
                 obstacleLeft > 200 && obstacleLeft < 280 && birdLeft === 220 &&
