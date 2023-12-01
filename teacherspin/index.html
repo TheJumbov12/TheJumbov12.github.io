@@ -26,23 +26,40 @@
 		}
 
         body {
+            position: center;
+        }
+        .Light {
             color: black;
+            background-color: white;
+        }
+        .Dark {
+            color: white;
+            background-color: black;
         }
         
 	</style>
 </head>
 <body>
+<p22><div class="Light"></p22>
 	<div class="container">
 		<img id = "Spinimg"src="https://3.files.edl.io/7cc1/23/06/05/140734-b326cf25-d3b8-4aa0-992c-647fd32c32f8.jpg" alt="spinning image" />
 	</div>
      <div style="position: fixed; top: 0; right: 0;">
-        	<h3><a onclick="GoBack()">Go back</a></h3>
+        	<button onclick="GoBack()">Go back</button>
+    </div>
+    <div style="position: fixed; top: 20; right: 0;">
+        <button Onclick="SaveGamePass()">Save game</button>
+    </div>
+    <div style="position: fixed; top: 20; right: 1;">
+        <button Onclick="RestoreGamePass()">Load game</button>
     </div>
     <div style="position: fixed; bottom: 0; right: 0;">
         <h3><a href="mailto:dantdm1004@gmail.com" target="_blank">Suggestion? Click here!</a></h3>
     </div>
+    <p10></p10>
     <p4></p4>
     <p5></p5>
+    <p8></p8>
     <p6></p6>
     <p7> </p7>
 	<p><strong id = "p3"></strong> <span id="count">0</span> <strong>spins</strong></p>
@@ -55,8 +72,24 @@
     <h3>Version v0.0.3</h3>
     <h3>Known bugs:</h3>
     <h3>None Right Now! :D</h3>
+</div>
 	<script>
+    
 	var FirstLoad = false
+    var Light = true
+    function LightSwitch() {
+        if (Light == true) {
+            document.querySelector('p22').innerHTML = `<div class="Dark">`;
+            document.querySelector('p72').innerHTML = `<button Onclick="LightSwitch()">Light Mode</button>`;
+            Light = false
+        if (Light == false) {
+            document.querySelector('p22').innerHTML = `<div class="Light">`;
+            Light = true
+            document.querySelector('p72').innerHTML = `<button Onclick="LightSwitch()">Dark Mode</button>`;
+        }
+        }
+           
+    }
         alert("Hello! Welcome to VAISD Teacher Spinner! This is a alpha version of it, so do expect some bugs. ")
         let person = prompt("Please enter the dev key if you have one, or click ok", "Insert Dev key here");
 
@@ -64,6 +97,9 @@
             document.querySelector('p4').innerHTML = `<button onclick="Add100000()">DEV: Add 100000</button>`;
             document.querySelector('p5').innerHTML = `<button onclick="AutoRebirth()">DEV: Auto Rebirth</button>`;
             document.querySelector('p6').innerHTML = `<button onclick="MaxRebirth()">DEV: Max Rebirth</button>`;
+            document.querySelector('p7').innerHTML = `<button onclick="DeveloperSetRebirth()">DEV: Set Rebirth</button>`;
+            document.querySelector('p8').innerHTML = `<h1></h1>`
+            document.querySelector('p10').innerHTML = `<h3>Developer Menu:</h3>`
             alert("Adam sucks")
         } 
         if (person != null) {
@@ -76,9 +112,9 @@
 		var img = document.querySelector('img');
 		var countSpan = document.querySelector('#count');
 		var MorePerSpinVar = 0;
-        	var FinalCount = 0;
-        	var HistoryHomeworkVar = 0;
-        	var Rebirthed = 1;
+        var FinalCount = 0;
+        var HistoryHomeworkVar = 0;
+        var Rebirthed = 1;
 		FirstLoad = true
         var FinalCount = document.cookie.replace(/(?:(?:^|.*;\s*)FinalCount\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 		img.addEventListener('animationiteration', function() {
@@ -113,6 +149,19 @@
             }
         }
 
+        function SaveGamePass() {
+            alert("Getting code....")
+            var Code = FinalCount * 72 
+            alert(Code)
+            console.log(Code)
+        }
+
+        function RestoreGamePass() {
+            var RetCode = prompt("Please input your code","Enter code here")
+            FinalCount = RetCode / 72
+            countSpan.textContent = FinalCount;
+        }
+
 	function GoBack() {
             history.back()
     	}
@@ -129,7 +178,7 @@
 
         function MaxRebirth(){
             FinalCount = 2000000
-            Rebirthed = 11
+            Rebirthed = 12
             Rebirth()
         }
         function Rebirth() {
@@ -214,13 +263,13 @@
                     Rebirthed = 12
                     document.getElementById("p3") = "The Hips has spun:"
                 }
-		if (Rebirthed == 12) {
-                    count = 0;
-                    document.getElementById("Spinimg").src  = "https://3.files.edl.io/a538/23/07/10/212211-24390c10-1b90-46f9-a8cd-237842b5ca82.png";
-                    alert("Corgrats! You have rebirted to the Kendall Level!")
-                    Rebirthed = 12
-                    document.getElementById("p3") = "The Hips has spun:"
-                }
+                if (Rebirthed == 12) {
+                            count = 0;
+                            document.getElementById("Spinimg").src  = "https://3.files.edl.io/a538/23/07/10/212211-24390c10-1b90-46f9-a8cd-237842b5ca82.png";
+                            alert("Corgrats! You have rebirted to the Kendall Level!")
+                            Rebirthed = 12
+                            document.getElementById("p3") = "The Hips has spun:"
+                        }
                 if (Rebirthed >= 13) {
                     alert("Coming soon :D")
                 }
@@ -234,9 +283,16 @@
             // Nothing here
 
         }
+        function DeveloperSetRebirth() {
+            var setrebirth = prompt("Select your rebirth amount.");
+            Rebirthed = setrebirth
+            FinalCount = 2000000
+            Rebirth()
+        }
 	</script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2617588767569037"
     crossorigin="anonymous"></script>
 
 </body>
+
 </html>
