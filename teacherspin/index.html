@@ -115,15 +115,14 @@
         var FinalCount = 0;
         var HistoryHomeworkVar = 0;
         var Rebirthed = 1;
+        var multi = 0 
 		FirstLoad = true
         var FinalCount = document.cookie.replace(/(?:(?:^|.*;\s*)FinalCount\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 		img.addEventListener('animationiteration', function() {
-			count++;
-            count = count + (Rebirthed * Rebirthed) - 1;
-            count = count + MorePerSpinVar;
-            count = count + HistoryHomeworkVar;
-            FinalCount = count
-            FinalCount = Math.round(FinalCount)
+			count = count + 1;
+            count = count + multi;
+            FinalCount = count;
+            FinalCount = Math.round(FinalCount);
 			countSpan.textContent = FinalCount;
 		});
 
@@ -133,8 +132,7 @@
             }
             if (FinalCount >= 200) {
                 FinalCount = FinalCount - 200
-                MorePerSpinVar = MorePerSpinVar + 2
-                countSpan.textContent = FinalCount;
+                multi = multi + 1;
             }
         }
 
@@ -152,6 +150,7 @@
         function SaveGamePass() {
             alert("Getting code....")
             var Code = FinalCount * 72 
+            Code = Code - 192
             alert(Code)
             console.log(Code)
         }
