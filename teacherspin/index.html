@@ -131,7 +131,7 @@
                 alert("Can't Buy this!")
             }
             if (FinalCount >= 200) {
-                FinalCount = FinalCount - 200
+                count = count - 200
                 multi = multi + 1;
             }
         }
@@ -141,9 +141,8 @@
                 alert("Can't Buy this!")
             }
             if (FinalCount >= 2500) {
-                FinalCount = FinalCount - 2500
-                HistoryHomeworkVar = HistoryHomeworkVar + 120
-                countSpan.textContent = FinalCount;
+                count = count - 2500
+                multi = multi + 20;
             }
         }
 
