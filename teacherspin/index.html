@@ -121,6 +121,8 @@
 		img.addEventListener('animationiteration', function() {
 			count = count + 1;
             count = count + multi;
+            Rebirthed = Rebirthed / .25;
+            count = count + Rebirthed;
             FinalCount = count;
             FinalCount = Math.round(FinalCount);
 			countSpan.textContent = FinalCount;
@@ -148,7 +150,7 @@
 
         function SaveGamePass() {
             alert("Getting code....")
-            var Code = FinalCount * 72 
+            var Code = FinalCount + 72 
             Code = Code - 192
             alert(Code)
             console.log(Code)
