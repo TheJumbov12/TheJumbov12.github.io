@@ -67,6 +67,8 @@
     <p><button onclick="MorePerSpin()">Cost: 200</button></p>
     <p>History Homework</p>
     <p><button onclick="HistoryHomework()">Cost: 2500</button></p>
+    <p>ISS</p>
+    <p><button onclick="ISS()">Cost: </button></p>
     <p>Rebirth</p>
     <p><button onclick="Rebirth()">Cost: 2000000</button></p>
     <h3>Version v0.0.3</h3>
@@ -138,6 +140,7 @@
             }
             if (FinalCount >= 2500) {
                 count = count - 2500
+                countSpan.textContent = FinalCount;
                 multi = multi + 20;
             }
         }
@@ -288,6 +291,7 @@
             }
             if (FinalCount >= 10000) {
                 count = count - 10000
+                countSpan.textContent = FinalCount;
                 multi = multi + 100;
             }
         }
