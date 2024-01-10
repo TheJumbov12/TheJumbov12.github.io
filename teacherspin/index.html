@@ -108,7 +108,7 @@
         if (person == "Insert Dev key here") {
             console.log("!!")
         }
-		var count = 1;
+		var count = 0;
 		var img = document.querySelector('img');
 		var countSpan = document.querySelector('#count');
         var Rebirthed = 1;
@@ -180,7 +180,7 @@
                 alert("You can't rebirth yet!")
             }
             if (FinalCount >= 2000000) {
-                multi = multi + 100;
+                multi = 0;
                 if (Rebirthed == 1) {
                     count = 0;
                     multi = multi * Rebirthed;
