@@ -183,6 +183,7 @@
                 multi = multi + 100;
                 if (Rebirthed == 1) {
                     count = 0;
+                    multi = multi * Rebirthed;
                     document.getElementById("Spinimg").src  = "https://3.files.edl.io/7b7e/22/06/01/175650-1d574548-c65c-4b96-95cb-99108866bda3.jpg";
                     alert("Corgrats! You have rebirted to the Beal Level!")
                     Rebirthed = 2
@@ -190,6 +191,7 @@
                 }
                 if (Rebirthed == 2) {
                     count = 0;
+                    multi = multi * Rebirthed;
                     document.getElementById("Spinimg").src  = "https://3.files.edl.io/4005/22/07/11/200943-5dcec845-4ca5-4a13-9031-ae8660d7813a.jpg";
                     alert("Corgrats! You have rebirted to the Otto Level!")
                     Rebirthed = 3
@@ -197,6 +199,7 @@
                 }
                 if (Rebirthed == 3) {
                     count = 0;
+                    multi = multi * Rebirthed;
                     document.getElementById("Spinimg").src  = "https://3.files.edl.io/1ed5/20/11/02/025139-fdea1e3d-9fe4-4e18-87f1-3dc71285bf6e.jpg";
                     alert("Corgrats! You have rebirted to the Best Level!")
                     Rebirthed = 4
@@ -204,6 +207,7 @@
                 }
                 if (Rebirthed == 4) {
                     count = 0;
+                    multi = multi * Rebirthed;
                     document.getElementById("Spinimg").src  = "https://3.files.edl.io/7cb0/23/02/28/193139-b6c471af-21c9-42b2-94d2-52a3225c3a64.jpg";
                     alert("Corgrats! You have rebirted to the Brogden Level!")
                     Rebirthed = 5
@@ -211,6 +215,7 @@
                 }
                 if (Rebirthed == 5) {
                     count = 0;
+                    multi = multi * Rebirthed;
                     document.getElementById("Spinimg").src  = "https://3.files.edl.io/9da3/22/06/02/132319-2322c0ff-fa3f-4300-9dbc-d98382f6e429.jpg";
                     alert("Corgrats! You have rebirted to the Essary Level!")
                     Rebirthed = 6
@@ -218,6 +223,7 @@
                 }
                 if (Rebirthed == 6) {
                     count = 0;
+                    multi = multi * Rebirthed;
                     document.getElementById("Spinimg").src  = "https://1.cdn.edl.io/DpBhkLvjWKLufhyDJtysBk092bW53lkH9fnEOLGX43ycRVHQ.jpg";
                     alert("Corgrats! You have rebirted to the Hardcastle Level!")
                     Rebirthed = 7
@@ -225,6 +231,7 @@
                 }
                 if (Rebirthed == 7) {
                     count = 0;
+                    multi = multi * Rebirthed;
                     document.getElementById("Spinimg").src  = "https://3.files.edl.io/3c40/23/05/30/173018-63531371-0896-4f97-8794-688b25526894.jpg";
                     alert("Corgrats! You have rebirted to the Blanton Level!")
                     Rebirthed = 8
@@ -232,6 +239,7 @@
                 }
                 if (Rebirthed == 8) {
                     count = 0;
+                    multi = multi * Rebirthed;
                     document.getElementById("Spinimg").src  = "https://3.files.edl.io/f1a2/21/06/03/161354-f43e1f9e-278c-466a-82a4-a9a970c6e2aa.jpg";
                     alert("Corgrats! You have rebirted to the Elliott Level!")
                     Rebirthed = 9
@@ -239,6 +247,7 @@
                 }
                 if (Rebirthed == 9) {
                     count = 0;
+                    multi = multi * Rebirthed;
                     document.getElementById("Spinimg").src  = "https://1.cdn.edl.io/stuJrdfWiZdsn1G4jOSFdYRChXLvOsVJaPampYUxAzfogLK5.jpg";
                     alert("Corgrats! You have rebirted to the Stein Level!")
                     Rebirthed = 10
@@ -246,6 +255,7 @@
                 }
                 if (Rebirthed == 10) {
                     count = 0;
+                    multi = multi * Rebirthed;
                     document.getElementById("Spinimg").src  = "https://3.files.edl.io/da03/22/11/29/163632-75952f63-5a90-4599-bba0-d6977853fc89.png";
                     alert("Corgrats! You have rebirted to the Nabors Level!")
                     Rebirthed = 11
@@ -253,6 +263,7 @@
                 }
                 if (Rebirthed == 11) {
                     count = 0;
+                    multi = multi * Rebirthed;
                     document.getElementById("Spinimg").src  = "https://github.com/TheJumbov12/TheJumbov12.github.io/blob/main/teacherspin/Screenshot_20231021_233711_Snapchat.png?raw=true";
                     alert("Corgrats! You have rebirted to the Landen Level!")
                     Rebirthed = 12
@@ -260,6 +271,7 @@
                 }
                 if (Rebirthed == 12) {
                     count = 0;
+                    multi = multi * Rebirthed;
                     document.getElementById("Spinimg").src  = "https://3.files.edl.io/a538/23/07/10/212211-24390c10-1b90-46f9-a8cd-237842b5ca82.png";
                     alert("Corgrats! You have rebirted to the Kendall Level!")
                     Rebirthed = 12
@@ -271,7 +283,13 @@
             }
         }
         function ISS() {
-            alert("This does nothing!")
+            if (FinalCount <= 10000) {
+                alert("Can't Buy this!")
+            }
+            if (FinalCount >= 10000) {
+                count = count - 10000
+                multi = multi + 100;
+            }
         }
 
         function Save() {
