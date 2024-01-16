@@ -6,10 +6,16 @@
 	<style>
 		.container {
 			position: fixed;
-			width: 578px;
-			height: 578px;
-			margin: 0 auto;
+			width: 450px;
+			height: 450px;
+			margin: 100px 220px;
 		}
+
+        .upgradearea {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+        }
 
 		img {
 			animation: spin 2s linear infinite;
@@ -27,6 +33,7 @@
 
         body {
             position: center;
+            background-image: url('images.jpeg');
         }
         .Light {
             color: black;
@@ -37,9 +44,40 @@
             background-color: black;
         }
         
+        .fancy-button {
+            background-color: #6b5a0e; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 50px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transition: all 0.3s ease 0s;
+        }
+
+        .fancy-button:hover {
+            background-color: #3e8e41; /* Dark green */
+            box-shadow: 0 12px 20px rgba(0,0,0,0.4);
+            transform: translateY(-5px);
+        }
+
+        .white-text {
+            color: white;
+        }
+
+        .scroll-window {
+            overflow-y: scroll;
+        }
+
 	</style>
 </head>
 <body>
+    
 <p22><div class="Light"></p22>
 	<div class="container">
 		<img id = "Spinimg"src="https://3.files.edl.io/7cc1/23/06/05/140734-b326cf25-d3b8-4aa0-992c-647fd32c32f8.jpg" alt="spinning image" />
@@ -47,36 +85,38 @@
      <div style="position: fixed; top: 0; right: 0;">
         	<button onclick="GoBack()">Go back</button>
     </div>
-    <div style="position: fixed; top: 20; right: 0;">
-        <button Onclick="SaveGamePass()">Save game</button>
-    </div>
-    <div style="position: fixed; top: 20; right: 1;">
-        <button Onclick="RestoreGamePass()">Load game</button>
-    </div>
     <div style="position: fixed; bottom: 0; right: 0;">
         <h3><a href="mailto:dantdm1004@gmail.com" target="_blank">Suggestion? Click here!</a></h3>
     </div>
-    <p10></p10>
-    <p4></p4>
-    <p5></p5>
-    <p8></p8>
-    <p6></p6>
-    <p7> </p7>
-	<p><strong id = "p3"></strong> <span id="count">0</span> <strong>spins</strong></p>
-    <p>More Per Spin</p>
-    <p><button onclick="MorePerSpin()">Cost: 200</button></p>
-    <p>History Homework</p>
-    <p><button onclick="HistoryHomework()">Cost: 2500</button></p>
-    <p>ISS</p>
-    <p><button onclick="ISS()">Cost: 10000</button></p>
-    <p>Rebirth</p>
-    <p><button onclick="Rebirth()">Cost: 2000000</button></p>
-    <h3>Version v0.0.4</h3>
-    <h3>Change Logs:</h3>
-    <h3>Added the "ISS" upgrade [Cost 10000]</h3>
-    <h3>Notes:</h3>
-    <h3>I am working on rebirths and more upgrades.</h3>
-    <h3>Happy Spinning -The Jumbo :D</h3>
+    <div style="position: fixed; top: 0; right: 0;">
+        <div class="scroll-window">
+            <p10></p10>
+            <p4></p4>
+            <p5></p5>
+            <p8></p8>
+            <p6></p6>
+            <p7> </p7>
+            <p8></p8>
+            <p11></p11>
+            <p12></p12>
+            <p13></p13>
+            <p class="white-text"><strong id = "p3"></strong> <span id="count">0</span> <strong>spins</strong></p>
+            <h2 class="white-text">School IDs</h2>
+            <p><button class="fancy-button" onclick="MorePerSpin()">Cost: 100</button></p>
+            <h2 class="white-text">History Homework</h2>
+            <p><button class="fancy-button" onclick="HistoryHomework()">Cost: 2500</button></p>
+            <h2 class="white-text">Panther Prison</h2>
+            <p><button class="fancy-button" onclick="ISS()">Cost: 10000</button></p>
+            <h2 class="white-text">Rebirth</h2>
+            <p><button class="fancy-button" onclick="Rebirth()">Cost: 2000000</button></p>
+            <h3>Version v0.0.4</h3>
+            <h3>Change Logs:</h3>
+            <h3>Added the "ISS" upgrade [Cost 10000]</h3>
+            <h3>Notes:</h3>
+            <h3>I am working on rebirths and more upgrades.</h3>
+            <h3>Happy Spinning -The Jumbo :D</h3>
+        </div>
+    </div>
 </div>
 	<script>
     
@@ -105,7 +145,9 @@
             document.querySelector('p7').innerHTML = `<button onclick="DeveloperSetRebirth()">DEV: Set Rebirth</button>`;
             document.querySelector('p8').innerHTML = `<h1></h1>`
             document.querySelector('p10').innerHTML = `<h3>Developer Menu:</h3>`
-            alert("Adam sucks")
+            document.querySelector('p11').innerHTML = `<button onclick="DeveloperResetMoney()">DEV: Reset Stats</button>`
+            document.querySelector('p12').innerHTML = `<h1></h1>`
+            alert("Loaded development menu")
         } 
         if (person != null) {
             console.log("Password Entered! ")
@@ -127,12 +169,19 @@
 			countSpan.textContent = FinalCount;
 		});
 
+        function DeveloperResetMoney() {
+            count = 0
+            multi = 0
+            Rebirthed = 1
+            document.getElementById("Spinimg").src  = "https://3.files.edl.io/7cc1/23/06/05/140734-b326cf25-d3b8-4aa0-992c-647fd32c32f8.jpg";
+        }
+
         function MorePerSpin() {
-            if (FinalCount <= 200) {
+            if (FinalCount <= 100) {
                 alert("Can't Buy this!")
             }
             if (FinalCount >= 200) {
-                count = count - 200
+                count = count - 100
                 multi = multi + 1;
             }
         }
@@ -180,6 +229,7 @@
             FinalCount = 2000000
             Rebirthed = 12
             Rebirth()
+            document.getElementById("Spinimg").src  = "https://3.files.edl.io/7b7e/22/06/01/175650-1d574548-c65c-4b96-95cb-99108866bda3.jpg";
         }
         function Rebirth() {
             if (FinalCount <= 2000000) {
@@ -280,10 +330,18 @@
                     multi = multi * Rebirthed;
                     document.getElementById("Spinimg").src  = "https://3.files.edl.io/a538/23/07/10/212211-24390c10-1b90-46f9-a8cd-237842b5ca82.png";
                     alert("Corgrats! You have rebirted to the Kendall Level!")
-                    Rebirthed = 12
+                    Rebirthed = 13
                     document.getElementById("p3") = "The Hips has spun:"
                 }
-                if (Rebirthed >= 13) {
+                if (Rebirthed == 13) {
+                    count = 0;
+                    multi = multi * Rebirthed;
+                    document.getElementById("Spinimg").src  = "https://3.files.edl.io/d18d/23/05/30/202956-41e047c9-25fe-4dc0-b1c5-1025dcca6099.jpg";
+                    alert("Corgrats! You have rebirted to the Baker Level!")
+                    Rebirthed = 14
+                    document.getElementById("p3") = "The Hips has spun:"
+                }
+                if (Rebirthed >= 14) {
                     alert("Coming soon :D")
                 }
             }
