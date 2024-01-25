@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jumbo Development | Error</title>
+	<style>
+		body {
+			background-color: black;
+		}
+		img {
+			display: block;
+			margin: auto;
+			width: 50%;
+		}
+		h3 {
+			color: white;
+		}
+		p {
+			color: white;
+			font-size: 20px;
+		}
+
+    .fancy-button {
+            background-color: #6b5a0e; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 50px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transition: all 0.3s ease 0s;
+        }
+
+        .fancy-button:hover {
+            background-color: #3e8e41; /* Dark green */
+            box-shadow: 0 12px 20px rgba(0,0,0,0.4);
+            transform: translateY(-5px);
+        }
+	</style>
+</head>
+<body>
+	<h3>Server Error</h3>
+	<p>You found an error! Yippee</p>
+  <button class="fancy-button" onclick="GoBack()">Go back</button>
+</body>
+
+<script>
+  function GoBack() {
+    history.back()
+  }
+</script>
+</html>
