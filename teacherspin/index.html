@@ -161,6 +161,7 @@
         var Rebirthed = 1;
         var multi = 0;
 		FirstLoad = true
+        loadFromCookie()
 		img.addEventListener('animationiteration', function() {
 			count = count + 1;
             count = count + multi;
@@ -196,19 +197,14 @@
                 multi = multi + 20;
             }
         }
+        // Saving Stuff
+        setInterval(() => {
+            document.cookie = `FinalCount=${FinalCount}; path=/;`;
+        }, 1000);
 
-        function SaveGamePass() {
-            alert("Getting code....")
-            var Code = FinalCount + 72 
-            Code = Code - 192
-            alert(Code)
-            console.log(Code)
-        }
-
-        function RestoreGamePass() {
-            var RetCode = prompt("Please input your code","Enter code here")
-            FinalCount = RetCode / 72
-            countSpan.textContent = FinalCount;
+        function loadFromCookie() {
+            let FinalCount = 0
+            FinalCount = document.cookie.replace(/(?:(?:^|.*;\s*)FinalCount\s*\=\s*([^;]*).*$)|^.*$/, "$1");
         }
 
 	    function GoBack() {
