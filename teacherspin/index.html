@@ -158,6 +158,7 @@
         }
 		var img = document.querySelector('img');
 		var countSpan = document.querySelector('#count');
+        var count = 0
         var Rebirthed = 1;
         var multi = 0;
 		FirstLoad = true
@@ -196,15 +197,6 @@
                 countSpan.textContent = FinalCount;
                 multi = multi + 20;
             }
-        }
-        // Saving Stuff
-        setInterval(() => {
-            document.cookie = `FinalCount=${FinalCount}; path=/;`;
-        }, 1000);
-
-        function loadFromCookie() {
-            let FinalCount = 0
-            FinalCount = document.cookie.replace(/(?:(?:^|.*;\s*)FinalCount\s*\=\s*([^;]*).*$)|^.*$/, "$1");
         }
 
 	    function GoBack() {
