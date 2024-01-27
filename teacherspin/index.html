@@ -108,6 +108,8 @@
             <p><button class="fancy-button" onclick="HistoryHomework()">Cost: 2500</button></p>
             <h2 class="white-text">Panther Prison</h2>
             <p><button class="fancy-button" onclick="ISS()">Cost: 10000</button></p>
+            <h2 class="white-text">ID Check</h2>
+            <p><button class="fancy-button" onclick="IDCheck()">Cost: 1000000</button></p>
             <h2 class="white-text">Rebirth</h2>
             <p><button class="fancy-button" onclick="Rebirth()">Cost: 2000000</button></p>
             <h3>Version v0.0.5</h3>
@@ -342,6 +344,17 @@
                 count = count - 10000
                 countSpan.textContent = FinalCount;
                 multi = multi + 100;
+            }
+        }
+
+        function IDCheck() {
+            if (FinalCount <= 1000000) {
+                alert("Can't Buy this!")
+            }
+            if (FinalCount >= 1000000) {
+                count = count - 1000000
+                countSpan.textContent = FinalCount;
+                multi = multi + 1000;
             }
         }
 
