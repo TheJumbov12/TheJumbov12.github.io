@@ -14,6 +14,15 @@
             justify-content: center;
             height: 100vh;
         }
+        .scrolling-text {
+        background-color: #333;
+        color: #cecece;
+        padding: 10px;
+        }
+
+        .scrolling-text marquee {
+        display: inline-block;
+        }
         .image {
             width: 500px;
             height: 100px;
@@ -120,6 +129,14 @@
         }
         
     </script>
+    <div class="scrolling-text">
+        <marquee behavior="scroll" direction="left" scrollamount="4">
+          <!-- Add your text lines here -->
+          <span>Updates will appear here</span>
+          <span>Fixed Teacher Spinner</span>
+          <span>Yes, more games are on the way</span>
+        </marquee>
+      </div>
     <div class="container">
         <div class="image">
             <img src="developmentlogowhite.png" alt="Hacker">
