@@ -160,16 +160,16 @@
         }
 		var img = document.querySelector('img');
 		var countSpan = document.querySelector('#count');
-        var count = 0
-        var Rebirthed = 1;
-        var multi = 0;
+        	var count = 0
+        	var Rebirthed = 1;
+        	var multi = 0;
 		FirstLoad = true
 
 		img.addEventListener('animationiteration', function() {
 			count = count + 1;
-            count = count + multi;
-            FinalCount = count;
-            FinalCount = Math.round(FinalCount);
+            		count = count + multi;
+            		FinalCount = count;
+            		FinalCount = Math.round(FinalCount);
 			countSpan.textContent = FinalCount;
 		});
 
