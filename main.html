@@ -58,6 +58,15 @@
         canvas {
             background: #232323;
         }
+        .scrolling-text {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        }
+
+        .scrolling-text marquee {
+        display: inline-block;
+        }
 
         #bottom-text {
           position: fixed;
@@ -74,6 +83,14 @@
 
     </style>
 </head>
+<div class="scrolling-text">
+    <marquee behavior="scroll" direction="left" scrollamount="4">
+      <!-- Add your text lines here -->
+      <span>Updates will appear here</span>
+      <span>Fixed Teacher Spinner</span>
+      <span>Yes, more games are on the way</span>
+    </marquee>
+  </div>
 <body onload="startTimer()">
     <script src="script.js"></script>
     <div class="container">
