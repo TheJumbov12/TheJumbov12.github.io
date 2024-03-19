@@ -1,56 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Jumbo Development | Error</title>
-	<style>
-		body {
-			background-color: black;
-		}
-		img {
-			display: block;
-			margin: auto;
-			width: 50%;
-		}
-		h3 {
-			color: white;
-		}
-		p {
-			color: white;
-			font-size: 20px;
-		}
-
-    .fancy-button {
-            background-color: #6b5a0e; /* Green */
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 50px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            transition: all 0.3s ease 0s;
-        }
-
-        .fancy-button:hover {
-            background-color: #3e8e41; /* Dark green */
-            box-shadow: 0 12px 20px rgba(0,0,0,0.4);
-            transform: translateY(-5px);
-        }
-	</style>
+	<title>ERROR! x_x</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<h3>Server Error</h3>
-	<p>You found an error! Yippee</p>
-  <button class="fancy-button" onclick="GoBack()">Go back</button>
+	<header>
+		<a href="http://thejumbov12.github.io">
+		<img src="developmentlogowhite.png" alt="My logo" class="logo">
+      </a>
+	</header>
+	<main>
+		<img src="error.png" alt="My image" class="image">
+		<h1 class="title">Wait, what is that?</h1>
+		<p class="description">The server is having an issue right now or the page doesn't exist, try again soon. ERROR 404</p>
+        <button class="fancy-button" onclick=goBack()>Go back</button>
+	</main>
 </body>
+</html>
+
+<style>
+    body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+  	background-color: #1E2127;
+}
+
+header {
+	background-color: #f8f8f8;
+	padding: 20px;
+  	background-color: #1E2127;
+}
+
+.logo {
+	height: 50px;
+}
+
+main {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.image {
+	width: 25%;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+.title {
+	font-size: 36px;
+	font-weight: bold;
+	margin-top: 0;
+  	color: white;
+}
+
+.description {
+	font-size: 18px;
+	line-height: 1.5;
+  	color: white;
+}
+
+.fancy-button {
+  background-color: #F48731;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  transition-duration: 0.6s;
+  cursor: pointer;
+  border-radius: 10px;
+  opacity: 0.75;
+}
+
+.fancy-button:hover {
+  background-color: #ff9e44;
+}
+</style>
 
 <script>
-  function GoBack() {
-    history.back()
-  }
+	function goBack() {
+		window.history.back();
+	}
 </script>
-</html>
