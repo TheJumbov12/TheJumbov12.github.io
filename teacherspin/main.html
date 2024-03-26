@@ -158,8 +158,8 @@
             		FinalCount = count;
             		FinalCount = Math.round(FinalCount);
                     countSpan.textContent = FinalCount;
-                    saveCookieInterval = setInterval(function() {
-                    const valueToSave = FinalCount
+                    setInterval(function() {
+                    setCookie("cookies", FinalCount)
                 })
 		});
 
