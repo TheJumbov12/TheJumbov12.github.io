@@ -156,8 +156,12 @@
             		count = count + multi;
             		FinalCount = count;
             		FinalCount = Math.round(FinalCount);
+                    saveCookieInterval = setInterval(function() {
+                    const valueToSave = FinalCount
+                })
 			countSpan.textContent = FinalCount;
 		});
+
 
         function DeveloperResetMoney() {
             count = 0
