@@ -145,7 +145,11 @@
             document.querySelector('p4').innerHTML = `<button onclick="Add100000()">DEV: Add 100000</button>`;
             document.querySelector('p5').innerHTML = `<button onclick="AutoRebirth()">DEV: Auto Rebirth</button>`;
             document.querySelector('p6').innerHTML = `<button onclick="MaxRebirth()">DEV: Max Rebirth</button>`;
-            document.querySelector('p7').innerHTML = `<button onclick="DeveloperSetRebirth()">DEV: Set Rebirth</button>`;
+            document.querySelector('p7').innerHTML = ```<select id="dropdown">
+  <option value="value1">Value 1</option>
+  <option value="value2">Value 2</option>
+  <option value="value3">Value 3</option>
+</select>```;
             document.querySelector('p8').innerHTML = `<h1></h1>`
             document.querySelector('p10').innerHTML = `<h3>Developer Menu:</h3>`
             document.querySelector('p11').innerHTML = `<button onclick="DeveloperResetMoney()">DEV: Reset Stats</button>`
@@ -172,6 +176,15 @@
             		FinalCount = Math.round(FinalCount);
 			countSpan.textContent = FinalCount;
 		});
+
+         // Get the select element
+        var dropdown = document.getElementById('dropdown');
+
+        // Get the selected value and display it
+        dropdown.addEventListener('change', function() {
+        var selectedOption = dropdown.options[dropdown.selectedIndex].value;
+        document.getElementById('selectedValue').textContent = selectedOption;
+        });
 
         function DeveloperResetMoney() {
             count = 0
