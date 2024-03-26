@@ -122,22 +122,6 @@
     </div>
 </div>
 	<script>
-    
-	var FirstLoad = false
-    var Light = true
-    function LightSwitch() {
-        if (Light == true) {
-            document.querySelector('p22').innerHTML = `<div class="Dark">`;
-            document.querySelector('p72').innerHTML = `<button Onclick="LightSwitch()">Light Mode</button>`;
-            Light = false
-        if (Light == false) {
-            document.querySelector('p22').innerHTML = `<div class="Light">`;
-            Light = true
-            document.querySelector('p72').innerHTML = `<button Onclick="LightSwitch()">Dark Mode</button>`;
-        }
-        }
-           
-    }
         alert("Hello! Welcome to VAISD Teacher Spinner! This is a alpha version of it, so do expect some bugs. ")
         let person = prompt("Please enter the dev key if you have one, or click ok", "Insert Dev key here");
 
@@ -159,7 +143,9 @@
             console.log("!!")
         }
 		var img = document.querySelector('img');
-		var countSpan = document.querySelector('#count');
+        if (getCookieValue() != null) {
+            var count = getCookieValue()
+        }
         	var count = 0
         	var Rebirthed = 1;
         	var multi = 0;
@@ -358,9 +344,37 @@
             }
         }
 
-        function Save() {
-            // Nothing here
+        let saveCookieInterval;
 
+        function setCookie(x, y) {
+            // Set the name and value of the cookie
+            const cookieName = x;
+            const cookieValue = y;
+            
+            // Set the expiration date (optional)
+            const expirationDate = new Date();
+            expirationDate.setDate(expirationDate.getDate() + 99999); // Expires in 200+ years
+            
+            // Construct the cookie string
+            const cookieString = `${encodeURIComponent(cookieName)}=${encodeURIComponent(cookieValue)}; expires=${expirationDate.toUTCString()}; path=/`;
+
+            // Set the cookie
+            document.cookie = cookieString;
+        }
+
+        function getCookieValue(x) {
+            // Retrieve all cookies
+            const cookies = document.cookie.split(';');
+
+            // Find the cookie with the name 'my_cookie'
+            for (let cookie of cookies) {
+                const [name, value] = cookie.trim().split('=');
+                if (name === x) {
+                    // Decode and return the cookie value
+                    return decodeURIComponent(value);
+                }
+            }
+            return null; // Return null if cookie not found
         }
         function DeveloperSetRebirth() {
             var setrebirth = prompt("Select your rebirth amount. This will reset multipliers.");
