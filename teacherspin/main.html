@@ -172,20 +172,20 @@
         }
 
         function MorePerSpin() {
-            if (FinalCount <= 100) {
+            if (count <= 100) {
                 alert("Can't Buy this!")
             }
-            if (FinalCount >= 100) {
+            if (count >= 100) {
                 count = count - 100
                 multi = multi + 1;
             }
         }
 
         function HistoryHomework() {
-            if (FinalCount <= 2500) {
+            if (count <= 2500) {
                 alert("Can't Buy this!")
             }
-            if (FinalCount >= 2500) {
+            if (count >= 2500) {
                 count = count - 2500
                 countSpan.textContent = FinalCount;
                 multi = multi + 20;
@@ -251,10 +251,10 @@
             document.getElementById("Spinimg").src  = "https://3.files.edl.io/7b7e/22/06/01/175650-1d574548-c65c-4b96-95cb-99108866bda3.jpg";
         }
         function Rebirth() {
-            if (FinalCount <= 2000000) {
+            if (count <= 2000000) {
                 alert("You can't rebirth yet!")
             }
-            if (FinalCount >= 2000000) {
+            if (count >= 2000000) {
                 multi = 0;
                 if (Rebirthed == 1) {
                     count = 0;
@@ -366,10 +366,10 @@
             }
         }
         function ISS() {
-            if (FinalCount <= 10000) {
+            if (count <= 10000) {
                 alert("Can't Buy this!")
             }
-            if (FinalCount >= 10000) {
+            if (count >= 10000) {
                 count = count - 10000
                 countSpan.textContent = FinalCount;
                 multi = multi + 100;
@@ -377,10 +377,10 @@
         }
 
         function IDCheck() {
-            if (FinalCount <= 1000000) {
+            if (count <= 1000000) {
                 alert("Can't Buy this!")
             }
-            if (FinalCount >= 1000000) {
+            if (count >= 1000000) {
                 count = count - 1000000
                 countSpan.textContent = FinalCount;
                 multi = multi + 1000;
