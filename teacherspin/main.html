@@ -181,7 +181,6 @@
                 })
 
         function readNumber() {
-            var FinalCount;
             var cookies = document.cookie.split(';');
             for (var i = 0; i < cookies.length; i++) {
                 var cookie = cookies[i].trim();
@@ -197,12 +196,14 @@
             if (FinalCount !== null) {
                 console.log("Number read from cookie: " + FinalCount);
             } else {
+                var FinalCount;
                 console.log("No saved number found in cookie.");
             }
             if (FinalCount !== null) {
                 console.log("Multipler read from cookie" + multi);
                 
             } else {
+                var mulit;
                 console.log("Failed to get mulit")
             }
         }
