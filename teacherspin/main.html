@@ -154,10 +154,16 @@
                     break;
                 }
             }
-            if (savedNumber !== null) {
-                console.log("Number read from cookie: " + savedNumber);
+            if (FinalCount !== null) {
+                console.log("Number read from cookie: " + FinalCount);
             } else {
                 console.log("No saved number found in cookie.");
+            }
+            if (FinalCount !== null) {
+                console.log("Multipler read from cookie" + multi);
+                
+            } else {
+                console.log("Failed to get mulit")
             }
         }
         readNumber()
