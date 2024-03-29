@@ -122,6 +122,23 @@
     </div>
 </div>
 	<script>
+        function readNumber() {
+            var cookies = document.cookie.split(';');
+            var savedNumber = null;
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.startsWith("savedNumber=")) {
+                    savedNumber = parseInt(cookie.substring("savedNumber=".length), 10);
+                    break;
+                }
+            }
+            if (savedNumber !== null) {
+                console.log("Number read from cookie: " + savedNumber);
+            } else {
+                console.log("No saved number found in cookie.");
+            }
+        }
+        readNumber()
         alert("Hello! Welcome to VAISD Teacher Spinner! This is a alpha version of it, so do expect some bugs. ")
         let person = prompt("Please enter the dev key if you have one, or click ok", "Insert Dev key here");
 
@@ -387,38 +404,14 @@
             }
         }
 
-        let saveCookieInterval;
-
-        function setCookie(x, y) {
-            // Set the name and value of the cookie
-            const cookieName = x;
-            const cookieValue = y;
-            
-            // Set the expiration date (optional)
-            const expirationDate = new Date();
-            expirationDate.setDate(expirationDate.getDate() + 99999); // Expires in 200+ years
-            
-            // Construct the cookie string
-            const cookieString = `${encodeURIComponent(cookieName)}=${encodeURIComponent(cookieValue)}; expires=${expirationDate.toUTCString()}; path=/`;
-
-            // Set the cookie
-            document.cookie = cookieString;
+            // Function to save an integer value to cookies
+        function saveNumber() {
+            var number = FinalCount; // Change this to the integer value you want to save
+            document.cookie = "savedNumber=" + number;
+            console.log("Number saved to cookie: " + number);
         }
 
-        function getCookieValue(x) {
-            // Retrieve all cookies
-            const cookies = document.cookie.split(';');
 
-            // Find the cookie with the name 'my_cookie'
-            for (let cookie of cookies) {
-                const [name, value] = cookie.trim().split('=');
-                if (name === x) {
-                    // Decode and return the cookie value
-                    return decodeURIComponent(value);
-                }
-            }
-            return null; // Return null if cookie not found
-        }
         function DeveloperSetRebirth() {
             var setrebirth = prompt("Select your rebirth amount. This will reset multipliers.");
             multi = 0;
