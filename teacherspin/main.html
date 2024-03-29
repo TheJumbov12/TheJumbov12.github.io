@@ -164,6 +164,7 @@
             console.log("!!")
         }
 		var img = document.querySelector('img');
+            readNumber()
             var countSpan = document.querySelector('#count');
         	var count = 0
         	var Rebirthed = 1;
@@ -180,6 +181,7 @@
                 })
 
         function readNumber() {
+            var FinalCount;
             var cookies = document.cookie.split(';');
             for (var i = 0; i < cookies.length; i++) {
                 var cookie = cookies[i].trim();
