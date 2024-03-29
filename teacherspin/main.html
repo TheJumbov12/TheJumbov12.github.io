@@ -124,11 +124,14 @@
 	<script>
         function readNumber() {
             var cookies = document.cookie.split(';');
-            var savedNumber = null;
             for (var i = 0; i < cookies.length; i++) {
                 var cookie = cookies[i].trim();
                 if (cookie.startsWith("savedNumber=")) {
-                    savedNumber = parseInt(cookie.substring("savedNumber=".length), 10);
+                    FinalCount = parseInt(cookie.substring("savedNumber=".length), 10);
+                    break;
+                }
+                if (cookie.startsWith("savedmulti=")) {
+                    multi = parseInt(cookie.substring("savedmulti=".length), 10)
                     break;
                 }
             }
@@ -172,6 +175,7 @@
             		FinalCount = count;
             		FinalCount = Math.round(FinalCount);
                     countSpan.textContent = FinalCount;
+                    saveNumber();
                 })
 
 
@@ -402,7 +406,10 @@
         function saveNumber() {
             var number = FinalCount; // Change this to the integer value you want to save
             document.cookie = "savedNumber=" + number;
-            console.log("Number saved to cookie: " + number);
+            console.log("Spins saved to cookie: " + number);
+            var number = multi; // Change this to the integer value you want to save
+            document.cookie = "savedmulti=" + number;
+            console.log("Multi saved to cookie: " + number);
         }
 
 
