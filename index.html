@@ -93,7 +93,7 @@
   <div id="notification-text"></div>
 </div>
 <div class="loading-animation"></div>
-<p class="loading-text">Loading</p>
+<p1 class="loading-text">Loading</p1>
   <script>
     let x = Math.floor(Math.random() * 30000) + 1000;
     let y = x + 2000
@@ -105,7 +105,7 @@
 
       // Redirect to a different page after 2 seconds
       setTimeout(function() {
-        // window.location.href = 'https://thejumbov12.github.io/main.html'; // Replace with your desired URL
+        window.location.href = 'https://thejumbov12.github.io/main.html'; // Replace with your desired URL
       }, x);
 
       function showNotification(text, icon) {
@@ -132,6 +132,10 @@
     setTimeout(function() {
         showNotification() // Replace with your desired URL
       }, x + 3000);
+
+      setTimeout(function() {
+        document.querySelector('p1').innerHTML = `Failed to load!!!`;
+      }, x + 6000);
 
 
     setTimeout(function() {
