@@ -187,6 +187,8 @@
                 if (cookie.startsWith("savedNumber=")) {
                     FinalCount = parseInt(cookie.substring("savedNumber=".length), 10);
                     break;
+                } else {
+                    var FinalCount;
                 }
                 if (cookie.startsWith("savedmulti=")) {
                     multi = parseInt(cookie.substring("savedmulti=".length), 10)
@@ -196,7 +198,6 @@
             if (FinalCount !== null) {
                 console.log("Number read from cookie: " + FinalCount);
             } else {
-                var FinalCount;
                 console.log("No saved number found in cookie.");
             }
             if (FinalCount !== null) {
