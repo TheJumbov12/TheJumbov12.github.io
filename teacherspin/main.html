@@ -31,6 +31,26 @@
 			to { transform: rotate(360deg); }
 		}
 
+        .slide-in {
+        width: 100px; /* Adjust as needed */
+        height: 100px; /* Adjust as needed */
+        background-color: #00f; /* Adjust as needed */
+        position: relative;
+        animation: slideRight 1s forwards; /* Duration and timing function can be adjusted */
+        opacity: 0;
+        }
+
+        @keyframes slideRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
         body {
             position: center;
             background-image: url('images.jpeg');
@@ -81,7 +101,7 @@
     
 <p22><div class="Light"></p22>
 	<div class="container">
-		<img id = "Spinimg"src="https://3.files.edl.io/7cc1/23/06/05/140734-b326cf25-d3b8-4aa0-992c-647fd32c32f8.jpg" alt="spinning image" />
+		<div class="slide-in"><img id = "Spinimg"src="https://3.files.edl.io/7cc1/23/06/05/140734-b326cf25-d3b8-4aa0-992c-647fd32c32f8.jpg" alt="spinning image" /></div>
 	</div>
      <div style="position: fixed; top: 0; right: 0;">
         	<button onclick="GoBack()">Go back</button>
@@ -90,7 +110,7 @@
         <h3><a href="mailto:dantdm1004@gmail.com" target="_blank">Suggestion? Click here!</a></h3>
     </div>
     <div style="position: fixed; top: 0; right: 0; overflow-y: auto;">
-        <div class="scroll-window">
+        <div class="slide-in">
             <p10></p10>
             <p4></p4>
             <p5></p5>
