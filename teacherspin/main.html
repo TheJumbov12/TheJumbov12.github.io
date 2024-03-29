@@ -141,32 +141,7 @@
     </div>
 </div>
 	<script>
-        function readNumber() {
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = cookies[i].trim();
-                if (cookie.startsWith("savedNumber=")) {
-                    FinalCount = parseInt(cookie.substring("savedNumber=".length), 10);
-                    break;
-                }
-                if (cookie.startsWith("savedmulti=")) {
-                    multi = parseInt(cookie.substring("savedmulti=".length), 10)
-                    break;
-                }
-            }
-            if (FinalCount !== null) {
-                console.log("Number read from cookie: " + FinalCount);
-            } else {
-                console.log("No saved number found in cookie.");
-            }
-            if (FinalCount !== null) {
-                console.log("Multipler read from cookie" + multi);
-                
-            } else {
-                console.log("Failed to get mulit")
-            }
-        }
-        readNumber()
+        
         alert("Hello! Welcome to VAISD Teacher Spinner! This is a alpha version of it, so do expect some bugs. ")
         let person = prompt("Please enter the dev key if you have one, or click ok", "Insert Dev key here");
 
@@ -203,6 +178,32 @@
                     saveNumber();
                 })
 
+        function readNumber() {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.startsWith("savedNumber=")) {
+                    FinalCount = parseInt(cookie.substring("savedNumber=".length), 10);
+                    break;
+                }
+                if (cookie.startsWith("savedmulti=")) {
+                    multi = parseInt(cookie.substring("savedmulti=".length), 10)
+                    break;
+                }
+            }
+            if (FinalCount !== null) {
+                console.log("Number read from cookie: " + FinalCount);
+            } else {
+                console.log("No saved number found in cookie.");
+            }
+            if (FinalCount !== null) {
+                console.log("Multipler read from cookie" + multi);
+                
+            } else {
+                console.log("Failed to get mulit")
+            }
+        }
+        readNumber()
 
         function DeveloperResetMoney() {
             count = 0
