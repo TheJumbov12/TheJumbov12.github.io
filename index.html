@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <title>Loading Page</title>
 <style>
   body {
@@ -17,6 +18,35 @@
     height: 100vh;
   }
 
+  .notification {
+  position: fixed;
+  top: 20px;
+  right: 10px; /* Initially outside the viewport */
+  background-color: #0dff00;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(186, 186, 186, 0.2);
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  transition: right 0.5s ease;
+}
+
+.notification.hidden {
+  display: none;
+}
+
+#notification-icon {
+  width: 30px;
+  height: 30px;
+  background-color: #0dff00;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+#notification-text {
+  color: #ffffff;
+}
+
   .content {
     text-align: center;
     margin: 20px;
@@ -29,9 +59,11 @@
   }
 
   .loading-animation {
-    border: 8px solid #3498db;
+    border-top: 16px solid blue;
+    border-right: 16px solid green;
+    border-bottom: 16px solid rgb(183, 255, 0);
+    border-left: 16px solid pink;
     border-radius: 50%;
-    border-top: 8px solid #f3f3f3;
     width: 80px;
     height: 80px;
     animation: spin 2s linear infinite;
@@ -56,6 +88,10 @@
   <div class="text-area">
   </div>
 </div>
+<div id="notification-container" class="notification hidden">
+  <div id="notification-icon"></div>
+  <div id="notification-text"></div>
+</div>
 <div class="loading-animation"></div>
 <p class="loading-text">Loading</p>
   <script>
@@ -69,13 +105,38 @@
 
       // Redirect to a different page after 2 seconds
       setTimeout(function() {
-        window.location.href = 'https://thejumbov12.github.io/main.html'; // Replace with your desired URL
+        // window.location.href = 'https://thejumbov12.github.io/main.html'; // Replace with your desired URL
       }, x);
 
-      setTimeout(function() {
-        alert("Failed to verify connection! The main website may be down or being updated, please wait...")
-        window.location.reload();
-      }, y);
+      function showNotification(text, icon) {
+        var notificationContainer = document.getElementById('notification-container');
+        var notificationText = document.getElementById('notification-text');
+        var notificationIcon = document.getElementById('notification-icon');
+
+        // Set text and icon
+        notificationText.textContent = text || "Connection Error: Timeout! Retrying...";
+        notificationIcon.innerHTML = icon || "<span>&#x26A0;</span>";
+
+        // Show notification
+        notificationContainer.classList.remove('hidden');
+        setTimeout(function () {
+          hideNotification();
+        }, 6000); // Hide after 3 seconds
+      }
+
+    function hideNotification() {
+      var notificationContainer = document.getElementById('notification-container');
+      notificationContainer.classList.add('hidden');
+    }
+
+    setTimeout(function() {
+        showNotification() // Replace with your desired URL
+      }, x + 3000);
+
+
+    setTimeout(function() {
+        location.reload() // Replace with your desired URL
+      }, x + 9000);
     });
   </script>
 </body>
