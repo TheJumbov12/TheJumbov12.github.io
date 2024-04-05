@@ -12,7 +12,7 @@
 	</header>
 	<main>
 		<img src="server.png" alt="My image" class="image">
-		<h1 class="title">Couldn't find the page around Beal's Hips</h1>
+		<h1 class="title"><div id="dynamic-text"></div></h1>
 		<p class="description">The server is having an issue right now or the page doesn't exist, try again soon. ERROR 404</p>
         <button class="fancy-button" onclick=goBack()>Go back</button>
 	</main>
@@ -87,4 +87,23 @@ main {
 	function goBack() {
 		window.history.back();
 	}
+
+	document.addEventListener("DOMContentLoaded", function() {
+		// Array of text options
+		var texts = [
+			"AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+			"God Dangit Will",
+			"Adam rocked a little to hard",
+			"Chromebook died",
+		];
+
+		// Get a random index to select a text from the array
+		var randomIndex = Math.floor(Math.random() * texts.length);
+
+		// Get the div where you want to display the text
+		var dynamicText = document.getElementById("dynamic-text");
+
+		// Set the text content to a randomly selected option
+		dynamicText.textContent = texts[randomIndex];
+		});
 </script>
