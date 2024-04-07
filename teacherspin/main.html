@@ -141,7 +141,7 @@
     </div>
 </div>
 	<script>
-        
+        import Cookies from 'js-cookie';
         alert("Hello! Welcome to VAISD Teacher Spinner! This is a alpha version of it, so do expect some bugs. ")
         let person = prompt("Please enter the dev key if you have one, or click ok", "Insert Dev key here");
         readNumber();
@@ -434,12 +434,8 @@
 
             // Function to save an integer value to cookies
         function saveNumber() {
-            var number = FinalCount; // Change this to the integer value you want to save
-            document.cookie = "savedNumber=" + number;
-            console.log("Spins saved to cookie: " + number);
-            var number = multi; // Change this to the integer value you want to save
-            document.cookie = "savedmulti=" + number;
-            console.log("Multi saved to cookie: " + number);
+            Cookies.set('cookiecount', FinalCount)
+            Cookies.set('multicount', multi)
         }
 
 
