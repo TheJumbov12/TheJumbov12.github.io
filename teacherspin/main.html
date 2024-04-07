@@ -166,15 +166,15 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
         }
 		var img = document.querySelector('img');
             var countSpan = document.querySelector('#count');
-        	var count;
         	var Rebirthed = 1;
         	var multi = 0;
 		    var FirstLoad = true
 
         if (Cookies.get('cookiecount') != null || Cookies.get('cookiecount') == 0) {
-            count = Cookies.get('cookiecount')
+            var count = Cookies.get('cookiecount')
         } else {
             console.log("No save found!! ")
+            var count = 0;
         }
         var multi;
         var FinalCount;
