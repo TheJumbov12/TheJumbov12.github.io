@@ -170,6 +170,10 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
         	var multi = 0;
 		    var FirstLoad = true
 
+        if (Cookies.get('cookiecount') == NaN || Cookies.get('cookiecount') >= 999999999999) {
+            Cookies.set('cookiecount', 0)
+        }
+
         if (Cookies.get('cookiecount') != null || Cookies.get('cookiecount') == 0) {
             var count = Cookies.get('cookiecount')
         } else {
