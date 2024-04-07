@@ -168,13 +168,16 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 		var img = document.querySelector('img');
             readNumber()
             var countSpan = document.querySelector('#count');
-        	var count = 0
+        	var count;
         	var Rebirthed = 1;
         	var multi = 0;
 		    var FirstLoad = true
 
-        var count;
-        var FinalCount;
+        if (Cookies.get('cookiecount') != null || Cookies.get('cookiecount') == 0) {
+            count = Cookies.get('cookiecount')
+        } else {
+            console.log("No save found!! ")
+        }
         var multi;
 		img.addEventListener('animationiteration', function() {
 			count = count + 1;
