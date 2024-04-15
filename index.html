@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" href="notify/style.css"></link>
-<script src="notify/index.var.js"></script>
 <title>Loading Page</title>
 <style>
   body {
@@ -98,9 +96,8 @@
 </div>
 <div class="loading-animation"></div>
 <p1 class="loading-text">Loading</p1>
-<script src="https://www.google.com/recaptcha/api.js"></script>
+
   <script>
-    let notifier = new AWN(globalOptions);
     let x = Math.floor(Math.random() * 30000) + 1000;
     let y = x + 2000
     document.addEventListener("DOMContentLoaded", function() {
@@ -134,13 +131,22 @@
       var notificationContainer = document.getElementById('notification-container');
       notificationContainer.classList.add('hidden');
     }
+
+
+      if (Math.random(1,5) == 2){
+        
+      }
+      setTimeout(function() {
+          showNotification() // Replace with your desired URL
+        }, x + 3000);
+
         setTimeout(function() {
-          notifier.alert('400: Server Error, retrying', currentCallOptions);
+          document.querySelector('p1').innerHTML = `Failed to load!!!`;
         }, x + 6000);
 
 
       setTimeout(function() {
-          window.location.reload();
+          window.location.href = 'https://thejumbov12.github.io/main.html';
         }, x + 9000);
       });
   </script>
