@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded' , () => {
     const bird = document.querySelector('.bird')
     const gameDisplay = document.querySelector('.game-container')
     const ground = document.querySelector('.ground-moving')
+    var countSpan = document.querySelector('.score');
 
     let birdLeft = 220
     let birdBottom = 100
@@ -72,7 +73,6 @@ document.addEventListener('DOMContentLoaded' , () => {
                 gameDisplay.removeChild(topObstacle)
                 Score = Score + 2
                 Score = Score - 1
-                var countSpan = document.querySelector('#score');
                 countSpan.innerHTML = Score;
             }
             if (
