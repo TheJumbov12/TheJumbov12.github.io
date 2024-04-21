@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ERROR! x_x</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<a href="http://thejumbov12.github.io">
+		<img src="developmentlogowhite.png" alt="My logo" class="logo">
+      </a>
+	</header>
+	<main>
+		<h1 class="title">Message</h1>
+		<p class="description">Dear, Users</p>
+        <p class="description">There are going to be some changes to the main page,
+			this will affect your experiance a little tiny bit, it will add all of my work to the web site.
+			This is so I can add items to my website to show off more than just simple games,
+			such as programs to addons,
+			I just wanted to thank you for the support you have given me.
+			I hope you enjoy the new changes.
+
+		</p>
+		<p class="description">Thank you,
+			The Developer</p>
+        <button class="fancy-button" onclick=refresh()>Go back</button>
+	</main>
+</body>
+</html>
+
+<style>
+    body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+  	background-color: #1E2127;
+}
+
+header {
+	background-color: #f8f8f8;
+	padding: 20px;
+  	background-color: #1E2127;
+}
+
+.logo {
+	height: 50px;
+}
+
+main {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.image {
+	width: 25%;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+.title {
+	font-size: 36px;
+	font-weight: bold;
+	margin-top: 0;
+  	color: white;
+}
+
+.description {
+	font-size: 18px;
+	line-height: 1.5;
+  	color: white;
+}
+
+.fancy-button {
+  background-color: #F48731;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  transition-duration: 0.6s;
+  cursor: pointer;
+  border-radius: 10px;
+  opacity: 0.75;
+}
+
+.fancy-button:hover {
+  background-color: #ff9e44;
+}
+</style>
+
+<script>
+	function refresh() {
+		window.history.back()
+	}
+</script>
