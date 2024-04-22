@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+       .preload {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            transition: opacity 0.5s ease;
+        }
+
+       .preload-finished {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+       .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+       .image-corner {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background-image: url('path-to-your-image');
+            background-size: cover;
+        }
+
+       .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+       .fancy-button {
+            width: 100px;
+            height: 50px;
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+       .fancy-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('path-to-your-image');
+            background-size: cover;
+            transition: transform 0.5s ease;
+            z-index: -1;
+        }
+
+       .fancy-button:hover::before {
+            transform: translateX(-100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="preload">
+        <div class="loading">
+            Loading...
+        </div>
+    </div>
+    <div class="container">
+        <div class="image-corner"></div>
+        <div class="button-container">
+            <button class="fancy-button">
+                <img src="path-to-your-image" alt="Image">
+            </button>
+            <button class="fancy-button">
+                <img src="path-to-your-image" alt="Image">
+            </button>
+            <button class="fancy-button">
+                <img src="path-to-your-image" alt="Image">
+            </button>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', () => {
+            document.querySelector('.preload').classList.add('preload-finished');
+        });
+    </script>
+</body>
+</html>
