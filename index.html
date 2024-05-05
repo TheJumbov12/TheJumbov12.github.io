@@ -108,7 +108,14 @@
 
       // Redirect to a different page after 2 seconds
       setTimeout(function() {
-        window.location.href = 'https://thejumbov12.github.io/main.html'; // Replace with your desired URL
+        if (IsOnline == true) {
+          window.location.href = 'https://thejumbov12.github.io/main.html'; // Replace with your desired URL
+        } else {
+          showNotification("Connection Error: Timeout! Retrying...", "<span>&#x26A0;</span>");
+          setTimeout(function () {
+            window.location.href = 'https://thejumbov12.github.io/offline.html'
+          }, x + 1000)
+        }
       }, x);
 
       function showNotification(text, icon) {
@@ -149,6 +156,28 @@
           window.location.href = 'https://thejumbov12.github.io/main.html';
         }, x + 9000);
       });
+
+      function hasNetwork(online) {
+        if (online){
+          console.log("You are online")
+          var IsOnline = true
+        } else {
+          console.log("You are offline.")
+          var IsOnline = false
+        }
+      }
+
+      window.addEventListener("load", () => {
+        hasNetwork(navigator.onLine);
+
+        window.addEventListener("online", () => {
+          hasNetwork(true);
+        });
+
+        window.addEventListener("offline", () => {
+          hasNetwork(false);
+        })
+      })
   </script>
 </body>
 </html>
