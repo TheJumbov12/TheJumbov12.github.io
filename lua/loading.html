@@ -50,6 +50,8 @@
 
 			margin-bottom: 200px;
 
+            scale: 200%;
+
 		}
 
 		
@@ -61,6 +63,8 @@
 			font-size: 24px;
 
 			font-family: Arial, sans-serif;
+
+			color: white;
 
 		}
 
@@ -74,10 +78,22 @@
 
 		<img src="developmentlogowhite.png" alt="Centered Image" class="image">
 
-		<p class="text">This text is about 200px below the image.</p>
+		<p id="text" class="text">This text is about 200px below the image.</p>
 
 	</div>
 
 </body>
-
+<script>
+	function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
+		let random = math.random(1, 5)
+		if (random == 1){
+			let string = "You are joining " + servername + " running " + gamemode + " on " + mapname + "."
+		}
+		if (random == 2){
+			let string = "Did you know your SteamID is " + steamid + "!"
+		}
+		document.getElementById("text").src = string
+		setTimeout(GameDetails, 20000);
+	}
+</script>
 </html>
