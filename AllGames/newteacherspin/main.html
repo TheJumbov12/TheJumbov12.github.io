@@ -103,6 +103,9 @@
             <button>Button 2</button>
             <button>Button 3</button>
             <button>Button 4</button>
+            <button>Button 4</button>
+            <button>Button 4</button>
+            <button onclick="Rebirth()">Rebirth</button>
         </div>
     </div>
 
@@ -117,6 +120,13 @@
                 }
             }
             return null;
+        }
+
+        const dev = {
+            rebirth() {
+                spinCount = 20000000
+                Rebirth()
+            }
         }
 
         // Helper function to set a cookie
@@ -155,6 +165,19 @@
                 spinCount = spinCount - 500
                 MoreSpin++;
                 updateSpinCounter();
+            }
+        }
+        var BirthCount = 0
+        function Rebirth(){
+            if (spinCount > 20000000) {
+                spinCount = 0
+                MoreSpin = 0
+                BirthCount++;
+                if (BirthCount == 1) {
+                    alert("Congratulations, you have reached the rebirth milestone I!");
+                    console.log("Stien")
+                    document.getElementById("Spinimg").src  = "https://3.files.edl.io/7cc1/23/06/05/140734-b326cf25-d3b8-4aa0-992c-647fd32c32f8.jpg";
+                }
             }
         }
 
