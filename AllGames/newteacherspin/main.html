@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Spinning Image & Fancy Buttons</title>
+    <style>
+        /* General page styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Left-side container for the image */
+        .left-side {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        /* Spinning image styling */
+        .spin-image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            animation: spin 5s linear infinite;
+        }
+
+        /* Spin animation */
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Right-side container for the buttons */
+        .right-side {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+        }
+
+        /* Fancy button styles */
+        .button-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .button-list button {
+            padding: 15px 30px;
+            margin: 10px 0;
+            font-size: 18px;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background-image: linear-gradient(45deg, #ff6b6b, #f94d6b);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .button-list button:hover {
+            background-image: linear-gradient(45deg, #f94d6b, #ff6b6b);
+            transform: scale(1.05);
+        }
+
+        .button-list button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="left-side">
+        <div class="spin-image">
+            <img src="https://via.placeholder.com/300" alt="Spinning Image">
+        </div>
+    </div>
+    <div class="right-side">
+        <div class="button-list">
+            <button onclick="Buy()">Button 1</button>
+            <button>Button 2</button>
+            <button>Button 3</button>
+            <button>Button 4</button>
+        </div>
+    </div>
+</body>
+<script>
+    function Buy() {
+        alert("You have bought something!");
+        }
+</script>
+<noscript>This page will not work without Javascript!!!!</noscript>
+</html>

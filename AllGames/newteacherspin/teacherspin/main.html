@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jumbo Development | VAISD Teacher spinner</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<style>
+		.container {
+			position: fixed;
+			width: 450px;
+			height: 450px;
+			margin: 100px 220px;
+		}
+
+        .upgradearea {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+        }
+
+		img {
+			animation: spin 2s linear infinite;
+			width: 100%;
+			height: 100%;
+			position: relative;
+			top: 200;
+			left: 0;
+		}
+
+		@keyframes spin {
+			from { transform: rotate(0deg); }
+			to { transform: rotate(360deg); }
+		}
+
+        .slide-in {
+        width: 500px; /* Adjust as needed */
+        height: 800px; /* Adjust as needed */
+        position: relative;
+        animation: slideRight 1s forwards; /* Duration and timing function can be adjusted */
+        opacity: 0;
+        }
+
+        @keyframes slideRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        body {
+            position: center;
+            background-image: url('images.jpeg');
+            overflow: auto
+        }
+        .Light {
+            color: black;
+            background-color: white;
+        }
+        .Dark {
+            color: white;
+            background-color: black;
+        }
+        
+        .fancy-button {
+            background-color: #6b5a0e; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 50px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transition: all 0.3s ease 0s;
+        }
+
+        .fancy-button:hover {
+            background-color: #3e8e41; /* Dark green */
+            box-shadow: 0 12px 20px rgba(0,0,0,0.4);
+            transform: translateY(-5px);
+        }
+
+        .white-text {
+            color: white;
+        }
+
+        .scroll-window {
+            overflow-y: scroll;
+        }
+
+	</style>
+</head>
+<body>
+    
+<p22><div class="Light"></p22>
+	<div class="container">
+		<img id = "Spinimg"src="https://3.files.edl.io/7cc1/23/06/05/140734-b326cf25-d3b8-4aa0-992c-647fd32c32f8.jpg" alt="spinning image" />
+	</div>
+     <div style="position: fixed; top: 0; right: 0;">
+        	<button onclick="GoBack()">Go back</button>
+    </div>
+    <div style="position: fixed; bottom: 0; right: 0;">
+        <h3><a href="mailto:dantdm1004@gmail.com" target="_blank">Suggestion? Click here!</a></h3>
+    </div>
+    <div style="position: fixed; top: 0; right: 0; overflow-y: auto;">
+        <div class="slide-in">
+            <p10></p10>
+            <p4></p4>
+            <p5></p5>
+            <p8></p8>
+            <p6></p6>
+            <p7> </p7>
+            <p8></p8>
+            <p11></p11>
+            <p12></p12>
+            <p13></p13>
+            <p class="white-text"><strong id = "p3"></strong> <span id="count">0</span> <strong>spins</strong></p>
+            <h2 class="white-text">School IDs</h2>
+            <p><button class="fancy-button" onclick="MorePerSpin()">Cost: 100</button></p>
+            <h2 class="white-text">History Homework</h2>
+            <p><button class="fancy-button" onclick="HistoryHomework()">Cost: 2500</button></p>
+            <h2 class="white-text">Panther Prison</h2>
+            <p><button class="fancy-button" onclick="ISS()">Cost: 10000</button></p>
+            <h2 class="white-text">ID Check</h2>
+            <p><button class="fancy-button" onclick="IDCheck()">Cost: 1000000</button></p>
+            <h2 class="white-text">Rebirth</h2>
+            <p><button class="fancy-button" onclick="Rebirth()">Cost: 2000000</button></p>
+            <h3>Version v0.0.5</h3>
+            <h3>Change Logs:</h3>
+            <h3>Added the "Panther Prison" upgrade [Cost 10000]</h3>
+            <h3>Notes:</h3>
+            <h3>I am working on rebirths and more upgrades.</h3>
+            <h3>Happy Spinning -The Jumbo :D</h3>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+<script>
+    alert("Hello! Welcome to VAISD Teacher Spinner! This is a alpha version of it, so do expect some bugs. ")
+    let person = prompt("Please enter the dev key if you have one, or click ok", "Insert Dev key here");
+    if (person == "01252008") {
+        document.querySelector('p4').innerHTML = `<button onclick="Add100000()">DEV: Add 100000</button>`;
+        document.querySelector('p5').innerHTML = `<button onclick="AutoRebirth()">DEV: Auto Rebirth</button>`;
+        document.querySelector('p6').innerHTML = `<button onclick="MaxRebirth()">DEV: Max Rebirth</button>`;
+        document.querySelector('p7').innerHTML = `<button onclick="DeveloperSetRebirth()">DEV: Set Rebirth</button>`;
+        document.querySelector('p8').innerHTML = `<h1></h1>`
+        document.querySelector('p10').innerHTML = `<h3>Developer Menu:</h3>`
+        document.querySelector('p11').innerHTML = `<button onclick="DeveloperResetMoney()">DEV: Reset Stats</button>`
+        document.querySelector('p12').innerHTML = `<h1></h1>`
+        alert("Loaded development menu")
+    } 
+    if (person != null) {
+        console.log("Password Entered! ")
+    }
+    if (person == "Insert Dev key here") {
+        console.log("!!")
+    }
+	var img = document.querySelector('img');
+        var countSpan = document.querySelector('#count');
+    	var Rebirthed = 1;
+    	var multi = 0;
+	    var FirstLoad = true
+    if (Cookies.get('cookiecount') == NaN || Cookies.get('cookiecount') >= 999999999999) {
+        Cookies.set('cookiecount', "0")
+    }
+    if (Cookies.get('cookiecount') != null || Cookies.get('cookiecount') == 0) {
+        var count = Cookies.get('cookiecount')
+    } else {
+        console.log("No save found!! ")
+        var count = 0;
+    }
+    var multi;
+    var FinalCount;
+	img.addEventListener('animationiteration', function() {
+		count = count + 1;
+        		count = count + multi;
+        		FinalCount = count;
+        		FinalCount = Math.round(FinalCount);
+                countSpan.textContent = FinalCount;
+                saveNumber();
+            })
+    function DeveloperResetMoney() {
+        count = 0;
+        multi = 0;
+        Rebirthed = 1;
+        Cookies.set('cookiecount', "0")
+        Cookies.set('cookiemulti', "0")
+        Cookies.set('cookierebirth', "0")
+        document.getElementById("Spinimg").src  = "https://3.files.edl.io/7cc1/23/06/05/140734-b326cf25-d3b8-4aa0-992c-647fd32c32f8.jpg";
+    }
+    function MorePerSpin() {
+        if (count <= 100) {
+            alert("Can't Buy this!")
+        }
+        if (count >= 100) {
+            count = count - 100;
+            countSpan.textContent = FinalCount;
+            multi = multi + 1;
+        }
+    }
+    function HistoryHomework() {
+        if (count <= 2500) {
+            alert("Can't Buy this!")
+        }
+        if (count >= 2500) {
+            count = count - 2500;
+            countSpan.textContent = FinalCount;
+            multi = multi + 25;
+        }
+    }
+    function GoBack() {
+        history.back()
+	}
+    function Add100000() {
+       FinalCount += 100000;
+       countSpan.textContent = FinalCount;
+    }
+    function AutoRebirth() {
+        FinalCount = 2000000;
+        Rebirth();
+    }
+    function MaxRebirth(){
+        FinalCount = 2000000;
+        Rebirthed = 12;
+        Rebirth();
+        document.getElementById("Spinimg").src  = "https://3.files.edl.io/7b7e/22/06/01/175650-1d574548-c65c-4b96-95cb-99108866bda3.jpg";
+    }
+    function Rebirth() {
+        if (count <= 2000000) {
+            alert("You can't rebirth yet!")
+        }
+        if (count >= 2000000) {
+            multi = 0;
+            if (Rebirthed == 1) {
+                count = 0;
+                multi = multi * Rebirthed;
+                document.getElementById("Spinimg").src  = "https://3.files.edl.io/7b7e/22/06/01/175650-1d574548-c65c-4b96-95cb-99108866bda3.jpg";
+                alert("Corgrats! You have rebirted to the Beal Level!")
+                Rebirthed = 2
+                document.getElementById("p3") = "The Hips has spun:"
+            }
+            if (Rebirthed == 2) {
+                count = 0;
+                multi = multi * Rebirthed;
+                document.getElementById("Spinimg").src  = "https://3.files.edl.io/4005/22/07/11/200943-5dcec845-4ca5-4a13-9031-ae8660d7813a.jpg";
+                alert("Corgrats! You have rebirted to the Otto Level!")
+                Rebirthed = 3
+                document.getElementById("p3") = "The Hips has spun:"
+            }
+            if (Rebirthed == 3) {
+                count = 0;
+                multi = multi * Rebirthed;
+                document.getElementById("Spinimg").src  = "https://3.files.edl.io/1ed5/20/11/02/025139-fdea1e3d-9fe4-4e18-87f1-3dc71285bf6e.jpg";
+                alert("Corgrats! You have rebirted to the Best Level!")
+                Rebirthed = 4
+                document.getElementById("p3") = "The Hips has spun:"
+            }
+            if (Rebirthed == 4) {
+                count = 0;
+                multi = multi * Rebirthed;
+                document.getElementById("Spinimg").src  = "https://3.files.edl.io/7cb0/23/02/28/193139-b6c471af-21c9-42b2-94d2-52a3225c3a64.jpg";
+                alert("Corgrats! You have rebirted to the Brogden Level!")
+                Rebirthed = 5
+                document.getElementById("p3") = "The Hips has spun:"
+            }
+            if (Rebirthed == 5) {
+                count = 0;
+                multi = multi * Rebirthed;
+                document.getElementById("Spinimg").src  = "https://3.files.edl.io/9da3/22/06/02/132319-2322c0ff-fa3f-4300-9dbc-d98382f6e429.jpg";
+                alert("Corgrats! You have rebirted to the Essary Level!")
+                Rebirthed = 6
+                document.getElementById("p3") = "The Hips has spun:"
+            }
+            if (Rebirthed == 6) {
+                count = 0;
+                multi = multi * Rebirthed;
+                document.getElementById("Spinimg").src  = "https://1.cdn.edl.io/DpBhkLvjWKLufhyDJtysBk092bW53lkH9fnEOLGX43ycRVHQ.jpg";
+                alert("Corgrats! You have rebirted to the Hardcastle Level!")
+                Rebirthed = 7
+                document.getElementById("p3") = "The Hips has spun:"
+            }
+            if (Rebirthed == 7) {
+                count = 0;
+                multi = multi * Rebirthed;
+                document.getElementById("Spinimg").src  = "https://3.files.edl.io/3c40/23/05/30/173018-63531371-0896-4f97-8794-688b25526894.jpg";
+                alert("Corgrats! You have rebirted to the Blanton Level!")
+                Rebirthed = 8
+                document.getElementById("p3") = "The Hips has spun:"
+            }
+            if (Rebirthed == 8) {
+                count = 0;
+                multi = multi * Rebirthed;
+                document.getElementById("Spinimg").src  = "https://3.files.edl.io/f1a2/21/06/03/161354-f43e1f9e-278c-466a-82a4-a9a970c6e2aa.jpg";
+                alert("Corgrats! You have rebirted to the Elliott Level!")
+                Rebirthed = 9
+                document.getElementById("p3") = "The Hips has spun:"
+            }
+            if (Rebirthed == 9) {
+                count = 0;
+                multi = multi * Rebirthed;
+                document.getElementById("Spinimg").src  = "https://1.cdn.edl.io/stuJrdfWiZdsn1G4jOSFdYRChXLvOsVJaPampYUxAzfogLK5.jpg";
+                alert("Corgrats! You have rebirted to the Stein Level!")
+                Rebirthed = 10
+                document.getElementById("p3") = "The Hips has spun:"
+            }
+            if (Rebirthed == 10) {
+                count = 0;
+                multi = multi * Rebirthed;
+                document.getElementById("Spinimg").src  = "https://3.files.edl.io/da03/22/11/29/163632-75952f63-5a90-4599-bba0-d6977853fc89.png";
+                alert("Corgrats! You have rebirted to the Nabors Level!")
+                Rebirthed = 11
+                document.getElementById("p3") = "The Hips has spun:"
+            }
+            if (Rebirthed == 11) {
+                count = 0;
+                multi = multi * Rebirthed;
+                document.getElementById("Spinimg").src  = "https://github.com/TheJumbov12/TheJumbov12.github.io/blob/main/teacherspin/Screenshot_20231021_233711_Snapchat.png?raw=true";
+                alert("Corgrats! You have rebirted to the Landen Level!")
+                Rebirthed = 12
+                document.getElementById("p3") = "The Hips has spun:"
+            }
+            if (Rebirthed == 12) {
+                count = 0;
+                multi = multi * Rebirthed;
+                document.getElementById("Spinimg").src  = "https://3.files.edl.io/a538/23/07/10/212211-24390c10-1b90-46f9-a8cd-237842b5ca82.png";
+                alert("Corgrats! You have rebirted to the Kendall Level!")
+                Rebirthed = 13
+                document.getElementById("p3") = "The Hips has spun:"
+            }
+            if (Rebirthed == 13) {
+                count = 0;
+                multi = multi * Rebirthed;
+                document.getElementById("Spinimg").src  = "https://3.files.edl.io/d18d/23/05/30/202956-41e047c9-25fe-4dc0-b1c5-1025dcca6099.jpg";
+                alert("Corgrats! You have rebirted to the Baker Level!")
+                Rebirthed = 14
+                document.getElementById("p3") = "The Hips has spun:"
+            }
+            if (Rebirthed >= 14) {
+                alert("Coming soon :D")
+            }
+        }
+    }
+    function ISS() {
+        if (count <= 10000) {
+            alert("Can't Buy this!")
+        }
+        if (count >= 10000) {
+            count = count - 10000;
+            countSpan.textContent = FinalCount;
+            multi = multi + 100;
+        }
+    }
+    function IDCheck() {
+        if (count <= 1000000) {
+            alert("Can't Buy this!")
+        }
+        if (count >= 1000000) {
+            count = count - 1000000
+            countSpan.textContent = FinalCount;
+            multi = multi + 1000;
+        }
+    }
+        // Function to save an integer value to cookies
+    function saveNumber() {
+        Cookies.set('cookiecount', FinalCount);
+        Cookies.set('multicount', multi);
+        Cookies.set('rebirthcount', Rebirthed);
+    }
+    function DeveloperSetRebirth() {
+        var setrebirth = prompt("Select your rebirth amount. This will reset multipliers.");
+        multi = 0;
+        Rebirthed = setrebirth;
+        FinalCount = 2000000;
+        Rebirth()
+    }
+    
+    window.onunload = saveNumber();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2617588767569037"
+crossorigin="anonymous"></script>
+
+</body>
+
+</html>
