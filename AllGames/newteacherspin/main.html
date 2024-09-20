@@ -184,7 +184,7 @@
         function isss() {
             if (spinCount > 1000) {
                 spinCount = spinCount - 1000
-                iss++;
+                iss = iss + 5;
                 setCookie("iss", iss, 365);
                 updateSpinCounter();
             }
