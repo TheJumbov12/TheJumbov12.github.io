@@ -99,8 +99,8 @@
     <!-- Right Side with fancy buttons -->
     <div class="right-side">
         <div class="button-list">
-            <button onclick="MoreSpins()">More Spins</button>
-            <button>Button 2</button>
+            <button onclick="MoreSpins()">More Spins | 500 spins</button>
+            <button onclick="isss()">ISS | 1000 spins</button>
             <button>Button 3</button>
             <button>Button 4</button>
             <button>Button 4</button>
@@ -154,13 +154,14 @@
         let spinCount = parseInt(getCookie("spinCount")) || 0;
         let MoreSpin = parseInt(getCookie("MoreSpin")) || 0;
         let BirthCount = parseInt(getCookie("Rebirth")) || 1;
+        let iss = parseInt(getCookie("iss")) || 0;
         const spinCounterElement = document.getElementById("spinCounter");
         spinCounterElement.textContent = `Spins: ${spinCount}`;
         CheckRebirths()
         // Function to update the spin counter and save to cookie
         function updateSpinCounter() {
             spinCount++;
-            spinCount = spinCount + MoreSpin * BirthCount; 
+            spinCount = spinCount + MoreSpin + iss * BirthCount; 
             spinCounterElement.textContent = `Spins: ${spinCount}`;
             setCookie("spinCount", spinCount, 365);
             
@@ -177,6 +178,14 @@
                 spinCount = spinCount - 500
                 MoreSpin++;
                 setCookie("MoreSpin", MoreSpin, 365);
+                updateSpinCounter();
+            }
+        }
+        function isss() {
+            if (spinCount > 1000) {
+                spinCount = spinCount - 1000
+                iss++;
+                setCookie("iss", iss, 365);
                 updateSpinCounter();
             }
         }
