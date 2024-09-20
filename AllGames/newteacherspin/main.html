@@ -151,9 +151,11 @@
         });
         var MoreSpin = 0
         function MoreSpins() {
-            spinCount = spinCount - 500
-            MoreSpin++;
-            updateSpinCounter();
+            if (spinCount > 500) {
+                spinCount = spinCount - 500
+                MoreSpin++;
+                updateSpinCounter();
+            }
         }
 
     </script>
