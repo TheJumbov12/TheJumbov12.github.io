@@ -76,8 +76,8 @@
         /* Counter display */
         .counter {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 50px;
+            left: 50px;
             background-color: rgba(0, 0, 0, 0.5);
             color: white;
             padding: 10px;
@@ -99,7 +99,7 @@
     <!-- Right Side with fancy buttons -->
     <div class="right-side">
         <div class="button-list">
-            <button>Button 1</button>
+            <button onclick="MoreSpins()">More Spins</button>
             <button>Button 2</button>
             <button>Button 3</button>
             <button>Button 4</button>
@@ -138,6 +138,7 @@
         // Function to update the spin counter and save to cookie
         function updateSpinCounter() {
             spinCount++;
+            spinCount = spinCount + MoreSpins; 
             spinCounterElement.textContent = `Spins: ${spinCount}`;
             setCookie("spinCount", spinCount, 365);
         }
@@ -148,6 +149,12 @@
         spinImage.addEventListener('animationiteration', function() {
             updateSpinCounter();
         });
+
+        function MoreSpins() {
+            spinCount = spinCount - 500
+            MoreSpins++;
+            updateSpinCounter();
+        }
 
     </script>
 </body>
