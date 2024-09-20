@@ -166,6 +166,12 @@
             setCookie("spinCount", spinCount, 365);
             
         }
+        function noaddupdateSpinCounter() {
+            spinCount = spinCount + MoreSpin + iss * BirthCount; 
+            spinCounterElement.textContent = `Spins: ${spinCount}`;
+            setCookie("spinCount", spinCount, 365);
+            
+        }
 
         // Detect when a full rotation (360deg) is completed
         let lastRotation = 0;
@@ -178,7 +184,7 @@
                 spinCount = spinCount - 500
                 MoreSpin++;
                 setCookie("MoreSpin", MoreSpin, 365);
-                updateSpinCounter();
+                noaddupdateSpinCounter();
             }
         }
         function isss() {
@@ -186,7 +192,7 @@
                 spinCount = spinCount - 1000
                 iss = iss + 5;
                 setCookie("iss", iss, 365);
-                updateSpinCounter();
+                noaddupdateSpinCounter();
             }
         }
         function Rebirth(){
@@ -205,6 +211,7 @@
                     console.log("Dietz")
                     document.getElementById("Spinimg").src  = "https://3.files.edl.io/7b7e/22/06/01/175650-1d574548-c65c-4b96-95cb-99108866bda3.jpg";
                 }
+                noaddupdateSpinCounter();
             }
         }
         function CheckRebirths(){
