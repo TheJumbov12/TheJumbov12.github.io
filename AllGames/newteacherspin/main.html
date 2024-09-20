@@ -149,7 +149,7 @@
         let BirthCount = parseInt(getCookie("Rebirth")) || 1;
         const spinCounterElement = document.getElementById("spinCounter");
         spinCounterElement.textContent = `Spins: ${spinCount}`;
-
+        CheckRebirths()
         // Function to update the spin counter and save to cookie
         function updateSpinCounter() {
             spinCount++;
