@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Spinning Image & Fancy Buttons</title>
     <style>
         /* General page styling */
@@ -20,7 +19,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #000000;
+            background-color: #f0f0f0;
+            position: relative;
         }
 
         /* Spinning image styling */
@@ -28,7 +28,7 @@
             width: 300px;
             height: 300px;
             border-radius: 50%;
-            animation: spin 1s linear infinite;
+            animation: spin 5s linear infinite;
         }
 
         /* Spin animation */
@@ -43,7 +43,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #000000;
+            background-color: #ffffff;
         }
 
         /* Fancy button styles */
@@ -60,7 +60,7 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            background-image: linear-gradient(45deg, #dc5a5a, #f94d6b);
+            background-image: linear-gradient(45deg, #ff6b6b, #f94d6b);
             transition: background 0.3s ease, transform 0.2s ease;
         }
 
@@ -72,27 +72,83 @@
         .button-list button:active {
             transform: scale(0.95);
         }
+
+        /* Counter display */
+        .counter {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Left Side with spinning image and counter -->
     <div class="left-side">
         <div class="spin-image">
             <img id="Spinimg" src="https://3.files.edl.io/7cc1/23/06/05/140734-b326cf25-d3b8-4aa0-992c-647fd32c32f8.jpg" alt="Spinning Image">
         </div>
+        <div class="counter" id="spinCounter">Spins: 0</div>
     </div>
+
+    <!-- Right Side with fancy buttons -->
     <div class="right-side">
         <div class="button-list">
-            <button onclick="Buy()">Button 1</button>
+            <button>Button 1</button>
             <button>Button 2</button>
             <button>Button 3</button>
             <button>Button 4</button>
         </div>
     </div>
-</body>
-<script>
-    function Buy() {
-        alert("You have bought something!");
+
+    <script>
+        // Helper function to get a cookie by name
+        function getCookie(name) {
+            let cookieArr = document.cookie.split(";");
+            for (let i = 0; i < cookieArr.length; i++) {
+                let cookiePair = cookieArr[i].split("=");
+                if (name == cookiePair[0].trim()) {
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+            return null;
         }
-</script>
-<noscript>This page will not work without Javascript!!!!</noscript>
+
+        // Helper function to set a cookie
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        // Initialize spin counter from cookies or set to 0 if not found
+        let spinCount = parseInt(getCookie("spinCount")) || 0;
+        const spinCounterElement = document.getElementById("spinCounter");
+        spinCounterElement.textContent = `Spins: ${spinCount}`;
+
+        // Function to update the spin counter and save to cookie
+        function updateSpinCounter() {
+            spinCount++;
+            spinCounterElement.textContent = `Spins: ${spinCount}`;
+            setCookie("spinCount", spinCount, 365);
+        }
+
+        // Detect when a full rotation (360deg) is completed
+        let lastRotation = 0;
+        const spinImage = document.querySelector('.spin-image img');
+        spinImage.addEventListener('animationiteration', function() {
+            updateSpinCounter();
+        });
+
+    </script>
+</body>
 </html>
