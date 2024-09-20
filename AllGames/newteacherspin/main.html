@@ -138,7 +138,7 @@
         // Function to update the spin counter and save to cookie
         function updateSpinCounter() {
             spinCount++;
-            spinCount = spinCount + MoreSpins; 
+            spinCount = spinCount + MoreSpin; 
             spinCounterElement.textContent = `Spins: ${spinCount}`;
             setCookie("spinCount", spinCount, 365);
         }
@@ -149,13 +149,14 @@
         spinImage.addEventListener('animationiteration', function() {
             updateSpinCounter();
         });
-        var MoreSpins = 0
+        var MoreSpin = 0
         function MoreSpins() {
             spinCount = spinCount - 500
-            MoreSpins++;
+            MoreSpin++;
             updateSpinCounter();
         }
 
     </script>
+    <noscript>No javascript found</noscript>
 </body>
 </html>
