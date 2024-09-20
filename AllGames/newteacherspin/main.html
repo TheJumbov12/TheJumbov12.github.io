@@ -145,15 +145,18 @@
 
         // Initialize spin counter from cookies or set to 0 if not found
         let spinCount = parseInt(getCookie("spinCount")) || 0;
+        let MoreSpin = parseInt(getCookie("MoreSpin")) || 0;
+        let BirthCount = parseInt(getCookie("Rebirth")) || 1;
         const spinCounterElement = document.getElementById("spinCounter");
         spinCounterElement.textContent = `Spins: ${spinCount}`;
 
         // Function to update the spin counter and save to cookie
         function updateSpinCounter() {
             spinCount++;
-            spinCount = spinCount + MoreSpin; 
+            spinCount = spinCount + MoreSpin * BirthCount; 
             spinCounterElement.textContent = `Spins: ${spinCount}`;
             setCookie("spinCount", spinCount, 365);
+            
         }
 
         // Detect when a full rotation (360deg) is completed
@@ -162,20 +165,20 @@
         spinImage.addEventListener('animationiteration', function() {
             updateSpinCounter();
         });
-        var MoreSpin = 0
         function MoreSpins() {
             if (spinCount > 500) {
                 spinCount = spinCount - 500
                 MoreSpin++;
+                setCookie("MoreSpin", MoreSpin, 365);
                 updateSpinCounter();
             }
         }
-        var BirthCount = 0
         function Rebirth(){
             if (spinCount > 20000000) {
                 spinCount = 0
                 MoreSpin = 0
                 BirthCount++;
+                setCookie("Rebirth", BirthCount, 365);
                 if (BirthCount == 1) {
                     alert("Congratulations, you have reached the rebirth milestone I!");
                     console.log("Stien")
@@ -183,7 +186,12 @@
                 }
             }
         }
-
+        function CheckRebirths(){
+            if (BirthCount == 2) {
+                    console.log("Stien")
+                    document.getElementById("Spinimg").src  = "https://1.cdn.edl.io/stuJrdfWiZdsn1G4jOSFdYRChXLvOsVJaPampYUxAzfogLK5.jpg";
+            }
+        }
     </script>
     <noscript>No javascript found</noscript>
 </body>
