@@ -207,13 +207,7 @@
             }
         }
 
-        function randomtext() {
-            let texts = ["You got a prize!", "Just keep spinning.", "Did you know this was based on a gif?"]
-            let randomtext = texts[Math.floor(Math.random() * texts.length)];
-            document.getElementById("randomtext").src  = randomtext;
-            setTimeout(randomtext, 5000);
-        }
-        randomtext()
+
         function Rebirth(){
             if (spinCount > 20000000) {
                 spinCount = 0
@@ -233,7 +227,7 @@
                 if (BirthCount == 4) {
                     alert("Congratulations, you have reached the rebirth milestone III!");
                     console.log("Dietz")
-                    document.getElementById("Spinimg").src  = "https://3.files.edl.io/2fc4/24/05/28/145356-1a1dc5c1-ff65-4b2f-b479-d7a94a923483.png";
+                    document.getElementById("Spinimg").src  = "https://3.files.edl.io/4dfa/22/06/02/125854-82c2efe1-6ac7-4acc-8d95-8c5eb8ace1a7.jpg";
                 }
                 noaddupdateSpinCounter();
             }
