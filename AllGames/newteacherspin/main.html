@@ -102,7 +102,7 @@
         <div class="button-list">
             <button onclick="MoreSpins()">More Spins | 500 spins</button>
             <button onclick="isss()">ISS | 1000 spins</button>
-            <button>Button 3</button>
+            <button onclick="pantherlandd()">Panther Land | 5000 spins</button>
             <button>Button 4</button>
             <button>Button 4</button>
             <button>Button 4</button>
@@ -140,6 +140,7 @@
         let spinCount = parseInt(getCookie("spinCount")) || 0;
         let MoreSpin = parseInt(getCookie("MoreSpin")) || 0;
         let BirthCount = parseInt(getCookie("Rebirth")) || 1;
+        let pantherland = parseInt(getCookie("pantherland")) || 0;
         let iss = parseInt(getCookie("iss")) || 0;
         const spinCounterElement = document.getElementById("spinCounter");
         spinCounterElement.textContent = `Spins: ${spinCount}`;
@@ -178,6 +179,14 @@
                 spinCount = spinCount - 1000
                 iss = iss + 5;
                 setCookie("iss", iss, 365);
+                noaddupdateSpinCounter();
+            }
+        }
+        function pantherlandd() {
+            if (spinCount > 5000) {
+                spinCount = spinCount - 5000
+                pantherland = pantherland + 15;
+                setCookie("pantherland", pantherland, 365);
                 noaddupdateSpinCounter();
             }
         }
