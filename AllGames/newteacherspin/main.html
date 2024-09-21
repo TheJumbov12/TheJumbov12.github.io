@@ -105,7 +105,7 @@
             <img id="Spinimg" src="https://3.files.edl.io/7cc1/23/06/05/140734-b326cf25-d3b8-4aa0-992c-647fd32c32f8.jpg" alt="Spinning Image">
         </div>
         <div class="counter" id="spinCounter">Spins: 0</div>
-        <div class="question" href="mailto:dantdm1004@gmail.com">Questions or complaints?</div>
+        <div class="question" id="randomtext"></div>
     </div>
 
     <!-- Right Side with fancy buttons -->
@@ -207,6 +207,14 @@
                 noaddupdateSpinCounter();
             }
         }
+
+        function randomtext() {
+            let texts = ["You got a prize!", "Just keep spinning.", "Did you know this was based on a gif?"]
+            let randomtext = texts[Math.floor(Math.random() * texts.length)];
+            document.getElementById("randomtext").src  = randomtext;
+
+        }
+
         function Rebirth(){
             if (spinCount > 20000000) {
                 spinCount = 0
