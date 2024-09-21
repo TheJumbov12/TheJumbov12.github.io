@@ -38,7 +38,7 @@ body {
 /* Carousel styling */
 .carousel {
     position: relative;
-    max-width: 100%;
+    max-width: 20%;
     margin: 20px auto;
 }
 
