@@ -133,22 +133,7 @@
             return null;
         }
 
-        const dev = {
-            rebirth() {
-                spinCount = 20000000
-                Rebirth()
-            },
-            setspins(x) {
-                spinCount = x
-            },
-            reset(){
-                spinCount = 0
-                MoreSpin = 0
-                BirthCount = 0
-                CheckRebirths()
-                alert("Reset done.")
-            }
-        }
+        
 
         // Helper function to set a cookie
         function setCookie(name, value, days) {
@@ -243,6 +228,28 @@
             if (BirthCount == 3) {
                     console.log("Dietz")
                     document.getElementById("Spinimg").src  = "https://3.files.edl.io/7b7e/22/06/01/175650-1d574548-c65c-4b96-95cb-99108866bda3.jpg";
+            }
+        }
+
+        const dev = {
+            rebirth() {
+                spinCount = 20000000
+                Rebirth()
+            },
+            setrebirth(x) {
+                BirthCount = x
+                spinCount = 20000000
+                Rebirth()
+            },
+            setspins(x) {
+                spinCount = x
+            },
+            reset(){
+                spinCount = 0
+                MoreSpin = 0
+                BirthCount = 0
+                CheckRebirths()
+                alert("Reset done.")
             }
         }
     </script>
