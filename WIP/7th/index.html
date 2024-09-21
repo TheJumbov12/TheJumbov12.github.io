@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage with Carousel and Sections</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Image Carousel -->
+    <div class="carousel">
+        <img src="images/image1.jpg" class="carousel-img" alt="Slide 1">
+        <img src="images/image2.jpg" class="carousel-img" alt="Slide 2">
+        <img src="images/image3.jpg" class="carousel-img" alt="Slide 3">
+        <div class="carousel-controls">
+            <span class="prev" onclick="prevSlide()">&#10094;</span>
+            <span class="next" onclick="nextSlide()">&#10095;</span>
+        </div>
+    </div>
+
+    <!-- Explanation Section -->
+    <section class="explanation">
+        <h2>About This Page</h2>
+        <p>This webpage features a fully functional image carousel, a navigation bar at the top, and multiple content sections. The carousel slides through the images automatically, and you can also navigate manually.</p>
+    </section>
+
+    <!-- Text & Image Section -->
+    <section class="text-image-section">
+        <div class="text-box">
+            <h3>Additional Information</h3>
+            <p>This section contains text on the right and an image on the left, allowing you to highlight key content with accompanying visuals.</p>
+        </div>
+        <img src="images/image4.jpg" class="section-img" alt="Image Description">
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Your Website. All Rights Reserved.</p>
+            <img src="images/footer-logo.png" alt="Footer Logo">
+        </div>
+        <p class="footer-text">Some additional information or tagline goes here.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
