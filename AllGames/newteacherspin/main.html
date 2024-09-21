@@ -84,6 +84,17 @@
             border-radius: 5px;
             font-size: 20px;
         }
+
+        .question {
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
@@ -94,6 +105,7 @@
             <img id="Spinimg" src="https://3.files.edl.io/7cc1/23/06/05/140734-b326cf25-d3b8-4aa0-992c-647fd32c32f8.jpg" alt="Spinning Image">
         </div>
         <div class="counter" id="spinCounter">Spins: 0</div>
+        <div class="question" href="mailto:dantdm1004@gmail.com">Questions or complaints?</div>
     </div>
 
     <!-- Right Side with fancy buttons -->
@@ -208,8 +220,13 @@
                 }
                 if (BirthCount == 3) {
                     alert("Congratulations, you have reached the rebirth milestone II!");
+                    console.log("Rutlage")
+                    document.getElementById("Spinimg").src  = "https://3.files.edl.io/2fc4/24/05/28/145356-1a1dc5c1-ff65-4b2f-b479-d7a94a923483.png";
+                }
+                if (BirthCount == 4) {
+                    alert("Congratulations, you have reached the rebirth milestone III!");
                     console.log("Dietz")
-                    document.getElementById("Spinimg").src  = "https://3.files.edl.io/7b7e/22/06/01/175650-1d574548-c65c-4b96-95cb-99108866bda3.jpg";
+                    document.getElementById("Spinimg").src  = "https://3.files.edl.io/2fc4/24/05/28/145356-1a1dc5c1-ff65-4b2f-b479-d7a94a923483.png";
                 }
                 noaddupdateSpinCounter();
             }
