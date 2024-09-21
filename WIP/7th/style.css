@@ -38,12 +38,12 @@ body {
 /* Carousel styling */
 .carousel {
     position: relative;
-    max-width: 20%;
+    max-width: 50%;
     margin: 20px auto;
 }
 
 .carousel-img {
-    width: 20%;
+    width: 45%;
     display: none;
 }
 
