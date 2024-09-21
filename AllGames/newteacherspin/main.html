@@ -167,7 +167,7 @@
             
         }
         function noaddupdateSpinCounter() {
-            spinCount = spinCount + MoreSpin + iss * BirthCount; 
+            spinCount = spinCount; 
             spinCounterElement.textContent = `Spins: ${spinCount}`;
             setCookie("spinCount", spinCount, 365);
             
