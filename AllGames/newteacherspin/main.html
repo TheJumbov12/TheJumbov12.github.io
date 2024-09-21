@@ -212,9 +212,9 @@
             let texts = ["You got a prize!", "Just keep spinning.", "Did you know this was based on a gif?"]
             let randomtext = texts[Math.floor(Math.random() * texts.length)];
             document.getElementById("randomtext").src  = randomtext;
-
+            setTimeout(randomtext, 5000);
         }
-
+        randomtext()
         function Rebirth(){
             if (spinCount > 20000000) {
                 spinCount = 0
