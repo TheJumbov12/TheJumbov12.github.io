@@ -1,0 +1,26 @@
+<script>
+    let password = prompt("Please input the design code you were given!", "Put design code here!")
+    let Fail = false
+    function Failed() {
+        if (Fail == false) {
+            Fail = true
+            alert("Sorry, the design code you entered is incorrect. Please try again.");
+            history.back()
+        }
+    }
+
+    if (password == "sanford1") {
+        Fail = true
+        alert("Welcome, Please enjoy the designs.")
+        location.href = "sanford/"
+    } else {
+        Failed()
+    }
+    if (password == "thetre2") {
+        Fail = true
+        alert("Your design is not ready yet, please come back when they are.")
+        history.back()
+    } else {
+        Failed()
+    }
+</script>
