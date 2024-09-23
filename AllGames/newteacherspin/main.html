@@ -148,7 +148,8 @@
         // Function to update the spin counter and save to cookie
         function updateSpinCounter() {
             spinCount++;
-            spinCount = spinCount + MoreSpin + iss * BirthCount; 
+            spinCount = spinCount + MoreSpin + iss;
+            spinCount = spinCount * BirthCount; 
             spinCounterElement.textContent = `Spins: ${spinCount}`;
             setCookie("spinCount", spinCount, 365);
             
@@ -189,6 +190,13 @@
                 setCookie("pantherland", pantherland, 365);
                 noaddupdateSpinCounter();
             }
+        }
+        function Football() {
+            if (spinCount > 10000) {
+                spinCount = spinCount - 10000
+                Football = Football + 40;
+                setCookie("Football", Football, 365);
+                noaddupdateSpinCounter()
         }
 
 
