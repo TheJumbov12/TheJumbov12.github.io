@@ -132,6 +132,13 @@
       notificationContainer.classList.add('hidden');
     }
 
+    window.onload = () => {
+      "use strict";
+
+      if ("serviceWorker" in navigator && document.URL.split(":")[0] !== "file") {
+        navigator.serviceWorker.register("./sw.js");
+      }
+    }
 
       setTimeout(function() {
           window.location.href = 'https://thejumbov12.github.io/main.html';
