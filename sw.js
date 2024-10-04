@@ -3,7 +3,6 @@ let cacheName = "offline" // Whatever name
 // This example use a folder named «/core» in the root folder
 // It is mandatory to add an icon (Important for mobile users)
 let filesToCache = [
-  "/",
   "/offline/index.html",
   "/offline/no-wifi.png",
   "/offline/developmentlogowhite.png"
