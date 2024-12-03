@@ -11,10 +11,19 @@
       </a>
 	</header>
 	<main>
-		<i class="fa-solid fa-triangle-exclamation fa-beat-fade fa-10x" style="color: #ff0000;"></i>
-		<h1 class="title">Alert!</h1>
-		<p class="description">This project is no longer being worked on. All items come as is. The repos may be updated, but I am working full-time over at New North Roleplay</p>
-		<button class="fancy-button" onclick="href='thejumbov12.pages.dev'">Go to main page</button>
+		<h1 class="title">Message</h1>
+		<p class="description">Dear, Users</p>
+        <p class="description">There are going to be some changes to the main page,
+			this will affect your experiance a little tiny bit, it will add all of my work to the web site.
+			This is so I can add items to my website to show off more than just simple games,
+			such as programs to addons,
+			I just wanted to thank you for the support you have given me.
+			I hope you enjoy the new changes.
+
+		</p>
+		<p class="description">Thank you,
+			The Developer</p>
+        <button class="fancy-button" onclick=refresh()>Go back</button>
 	</main>
 </body>
 </html>
@@ -42,12 +51,6 @@ main {
 	margin: 0 auto;
 	padding: 20px;
 }
-
-.scrolling-text {
-        background-color: #1E2127;
-        color: #fff;
-        padding: 10px;
-        }
 
 .image {
 	width: 25%;
@@ -91,9 +94,6 @@ main {
 
 <script>
 	function refresh() {
-		window.location.reload()
+		window.history.back()
 	}
-
-	setInterval(refresh, 60000)
 </script>
-<script src="https://kit.fontawesome.com/d4dd2d3c7b.js" crossorigin="anonymous"></script>

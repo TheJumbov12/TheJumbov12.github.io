@@ -1,5 +1,5 @@
 
-![Logo](https://github.com/TheJumbov12/TheJumbov12.github.io/blob/main/developmentlogowhite.png?raw=true)
+![Logo](https://github.com/TheJumbov12/TheJumbov12.pages.dev/blob/main/developmentlogowhite.png?raw=true)
 
 
 # Jumbo Development | Website
@@ -8,7 +8,7 @@ It is a website for me to test out any dumb idea I might have.
 
 ## Demo
 
-https://thejumbov12.github.io
+https://thejumbov12.pages.dev
 
 
 ## FAQ
